@@ -1,0 +1,76 @@
+  header {
+    background-color: #333 !important;
+    color: rgb(0, 0, 0) !important;
+    padding: 20px !important;
+  }
+  
+  .user-profile {
+    position: relative;
+    display: inline-block; 
+    display: contents;
+    right: 0; 
+  }
+  
+  .profile-dropdown {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0);
+    padding: 12px 16px;
+  }
+  
+  .profile-dropdown p {
+    margin: 0;
+  }
+  
+  .profile-tab {
+    right: 0;
+    background-color: inherit;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .profile-tab:hover {
+    background-color: #111;
+  }
+  
+  .user-profile:hover .profile-dropdown {
+    display: block;
+  }
+  
+  .search-bar {
+    float: left;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 6px;
+    border: none;
+    width: 200px;
+  }
+  
+  .search-bar button[type="submit"] {
+    padding: 6px 10px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-bar button[type="submit"]:hover {
+    background-color: #bbb;
+  } 
+
+
+  .offcanvas.offcanvas-end {
+    left: 0;
+  }
+
+  .offcanvas.show:not(.hiding), .offcanvas.showing{
+    transform: none;
+  }
+
+  .offcanvas.offcanvas-end{
+    transform : translateX(-100%);
+  }

@@ -1,0 +1,88 @@
+ body {
+    height: 60em;
+    background-color: black;
+    overflow: hidden;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-image: url('/Image/main.jpg') !important;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+    margin: 50px auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    background-color: #FEC845;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #FEC845;
+}
+
+.popup {
+    margin : 50px auto;
+    width: 350px;
+    /* transform: translate(-50%, -50%); */
+    text-align: center;
+    background-color: #f44336;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.message {
+    font-size: 16px;
+}
+.container{
+    background: #f2f2f2 none repeat scroll 0 0;
+    width: 500px;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    border: solid;
+}
+
+.container h1{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.header{
+    background-color: white !important;
+}
+
+.header img{
+    margin: 10px;
+}
