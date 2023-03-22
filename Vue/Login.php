@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>Page de login</title>
-    <link rel="stylesheet" type="text/css" href="CSS\login_style.css">
+    <link rel="stylesheet" type="text/css" href="..\CSS\login_style.css">
 </head>
 
 <body>
