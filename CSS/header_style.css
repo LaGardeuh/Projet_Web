@@ -48,7 +48,6 @@
   .search-bar input[type="text"] {
     padding: 6px;
     border: none;
-    width: 200px;
   }
   
   .search-bar button[type="submit"] {
