@@ -12,15 +12,6 @@ body {
     width: 100%;
 }
 
-input{
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-}
-
 .container{
     background: #f2f2f2 none repeat scroll 0 0;
     width: 500px;
@@ -31,6 +22,19 @@ input{
     border: solid;
 }
 
+.header{
+    background-color: white;
+}
+
+.header img{
+    margin: 10px;
+}
+
+.colonne h1{
+    text-align: center;
+    padding-top: 20px;
+}
+
 form {
     background-color: #fff;
     border-radius: 5px;
@@ -38,14 +42,6 @@ form {
     padding: 20px;
     width: 300px;
     margin: 50px auto;
-}
-
-.header{
-    background-color: white;
-}
-
-.header img{
-    margin: 10px;
 }
 
 
@@ -64,20 +60,24 @@ input[type="submit"] {
     transition: ease-out 0.4s;
 }
 
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
 input[type="submit"]:hover {
     box-shadow: inset 400px 0 0 0  #FEC845;
 }
 
-.colonne h1{
-    text-align: center;
-    padding-top: 20px;
-}
-
-input[type="text"][type="email"][type="password"]:hover {
+input[type="password"]:hover {
     box-shadow: 0 0 2px 1px #8ca8ff;
 }
   
-input[type="text"][type="email"][type="password"]:focus {
+input[type="password"]:focus {
     outline: none;
     box-shadow: 0 0 2px 1px #8ca8ff;
 }
