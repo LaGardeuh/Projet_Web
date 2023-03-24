@@ -5,14 +5,16 @@
             $h1 = $type == 'etudiant' ? 'Créer compte étudiant' : 'Créer compte pilote';
         } else {
             $type = '';
-            $h1 = 'Choisir le type de compte';
+            $h1 = 'Choisir le type de compte ';
         }
         ?> -->
 <!DOCTYPE html>
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Inscription</title>
+    <link rel="stylesheet" type="text/css" href="..\CSS\formulaire_create_style.css">
 </head>
 
 <body>
@@ -85,16 +87,17 @@
                     formHtml += '<label for="email">Email :</label>';
                     formHtml += '<input type="email" name="email" id="email" required><br>';
 
-                    formHtml += '<label for="promo">Promotion :</label>';
+                    formHtml += '<label for="promo">Promotion :    </label>';
                     formHtml += '<select name="promo" id="promo">';
                     for (var i = 0; i < promotions.length; i++) {
                         formHtml += '<option value="' + promotions[i].value + '">' + promotions[i].text + '</option>';
                     }
-                    formHtml += '</select><br>';
+                    formHtml += '</select><br><br>';
 
                     formHtml += '<label for="mdp">Mot de passe :</label>';
                     formHtml += '<input type="password" name="mdp" id="mdp" required><br>';
                     formHtml += '<input type="submit" value="Inscription">';
+                    formHtml += '<a href="Formulaire_Connexion.php" class="hyperlink" type="hyperlink">Vous avez déjà un compte ?</a>';
                 }
 
 
@@ -113,11 +116,12 @@
                     for (var i = 0; i < promotions.length; i++) {
                         formHtml += '<option value="' + promotions[i].value + '">' + promotions[i].text + '</option>';
                     }
-                    formHtml += '</select><br>';
+                    formHtml += '</select><br><br>';
 
                     formHtml += '<label for="mdp">Mot de passe :</label>';
                     formHtml += '<input type="password" name="mdp" id="mdp" required><br>';
                     formHtml += '<input type="submit" value="Inscription">';
+                    formHtml += '<a href="Formulaire_Connexion.php" class="hyperlink" type="hyperlink">Vous avez déjà un compte ?</a>';
                 }
 
                 if (type == 'entreprise') {
@@ -125,20 +129,20 @@
                     formHtml += '<label for="nom_entreprise">Nom de l\'entreprise:</label>';
                     formHtml += '<input type="text" id="nom_entreprise" name="nom_entreprise"><br>';
 
-                    formHtml += '<label for="localite">Localité:</label>';
+                    formHtml += '<label for="localite">Localité:    </label>';
                     formHtml += '<select id="localite" name="localite">'
                     for (var i = 0; i < villes.length; i++) {
                         formHtml += '<option value="' + villes[i].value + '">' + villes[i].text + '</option>';
                     }
-                    formHtml += '</select><br>'
+                    formHtml += '</select><br><br>'
 
-                    formHtml += '<label for="secteur_activite">Secteur d\'activité:</label>';
+                    formHtml += '<label for="secteur_activite">Secteur d\'activité:    </label>';
                     formHtml += '<select id="secteur_activite" name="secteur_activite">';
                     formHtml += '<option value="BTP">BTP</option>'
                     formHtml += '<option value="Info">Informatique</option>'
                     formHtml += '<option value="Generaliste">Généraliste</option>'
                     formHtml += '<option value="S3E">S3E</option>'
-                    formHtml += '</select><br>'
+                    formHtml += '</select><br><br>'
 
                     formHtml += '<label for="nombre_stagiaires">Nombre de stagiaires:</label>'
                     formHtml += '<input type="number" id="nombre_stagiaires" name="nombre_stagiaires"><br>';
@@ -147,25 +151,26 @@
                     formHtml += '<input type="number" id="confiance_pilote" name="confiance_pilote" min="1" max="5"><br>'
 
                     formHtml += '<input type="submit" value="Créer compte entreprise">';
+                    formHtml += '<a href="Formulaire_Connexion.php" class="hyperlink" type="hyperlink">Vous avez déjà un compte ?</a>';
                 }
 
-                if (type == 'offre_de_stage') {
+                /* if (type == 'offre_de_stage') {
                     var formHtml = '';
                     formHtml += '<label for="competences">Compétences :</label>';
                     formHtml += '<input type="text" id="competences" name="competences"><br>';
 
-                    formHtml += '<label for="localite">Localité(s) :</label>';
+                    formHtml += '<label for="localite">Localité(s) :    </label>';
                     formHtml += '<select id="localite" name="localite">'
                     for (var i = 0; i < villes.length; i++) {
                         formHtml += '<option value="' + villes[i].value + '">' + villes[i].text + '</option>';
                     }
-                    formHtml += '</select><br>'
+                    formHtml += '</select><br><br>'
 
-                    formHtml += '<label for="entreprise">Entreprise :</label>';
+                    formHtml += '<label for="entreprise">Entreprise :    </label>';
                     formHtml += '<select id="entreprise" name="entreprise">';
                     formHtml += '<option value="Valeuriad">Valeuriad</option>'
                     formHtml += '<option value="Engie">Engie</option>'
-                    formHtml += '</select><br>'
+                    formHtml += '</select><br><br>'
 
                     formHtml += '<label for="duree">Durée du Stage :</label>'
                     formHtml += '<input type="text" id="duree" name="duree" min="1" max="5"><br>'
@@ -178,7 +183,8 @@
 
 
                     formHtml += '<input type="submit" value="Créer compte entreprise">';
-                }
+                    formHtml += '<a href="connexion.php">Vous avez déjà un compte ?</a>';
+                } */
                 // Mettre à jour le formulaire dans le document HTML
                 var formDiv = document.getElementById('form');
                 formDiv.innerHTML = formHtml;
@@ -187,20 +193,31 @@
     </head>
 
     <body>
-        <h1>Choisir le type de compte</h1>
+        <div class="colonne">
+        
+            <div class="container">
+                <div class="header">
+                    <img src="..\Image\logo_cesi_ton_stage.jpg" alt="logo">    
+                </div>
+            <h1>Choisir le type de compte</h1>
+            
+            <!-- Liste déroulante "Type de compte" -->
+            <form method="post" action="">
+                
+            
+            <label for="type">Type de compte :  </label>
+            <select title="Sélectionnez le type de compte à créer" type="type" name="type" id="type" onchange="generateForm()" required>
+                <option value="">Choisir un type</option>
+                <option value="etudiant">Étudiant</option>
+                <option value="pilote">Pilote</option>
+                <option value="entreprise">Entreprise</option>
+                <!-- <option value="offre_de_stage">Offre de Stage</option> -->
+            </select><br><br>
 
-        <!-- Liste déroulante "Type de compte" -->
-        <label for="type">Type de compte :</label>
-        <select name="type" id="type" onchange="generateForm()" required>
-            <option value="">Choisir un type</option>
-            <option value="etudiant">Étudiant</option>
-            <option value="pilote">Pilote</option>
-            <option value="entreprise">Entreprise</option>
-            <option value="offre_de_stage">Offre de Stage</option>
-        </select><br>
-
-        <!-- Div pour le formulaire généré dynamiquement -->
-        <div id="form"></div>
+            <!-- Div pour le formulaire généré dynamiquement -->
+            <div id="form"></div>
+            </form><br>
+        </div>
     </body>
 
     </html>
