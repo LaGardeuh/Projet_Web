@@ -1,3 +1,13 @@
+<?php
+$bdd = new PDO('mysql:host=localhost;dbname=bddweb;','root','');
+$all_enterprise = $bdd->query('SELECT * FROM offre ORDER BY off_id DESC');
+if(isset($_GET['s']) AND !empty($_GET['s'])){
+    $recherche = htmlspecialchars($_GET['s']);
+    $all_enterprise = $bdd->query('SELECT off_entreprise FROM offre WHERE off_entreprise LIKE "%'.$recherche.'%" ORDER BY off_id DESC ');
+}
+?>
+
+
 <header>
     <nav class="navbar bg-body-tertiary fixed-top">
         <div class="container-fluid">
