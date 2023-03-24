@@ -1,3 +1,12 @@
+<?php
+$bdd = new PDO('mysql:host=localhost;dbname=bddweb;','root','');
+$all_enterprise = $bdd->query('SELECT * FROM offre ORDER BY off_id DESC');
+if(isset($_GET['s']) AND !empty($_GET['s'])){
+    $recherche = htmlspecialchars($_GET['s']);
+    $all_enterprise = $bdd->query('SELECT off_entreprise FROM offre WHERE off_entreprise LIKE "%'.$recherche.'%" ORDER BY off_id DESC ');
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,8 +18,6 @@
 </head>
 
 <body>
-    </head>
-
     <body>
         <header>
             <!-- <div class="search-bar">
@@ -55,9 +62,9 @@
                         </div>
                     </div>
 
-                    <form class="d-flex search-bar" role="search" method="get">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline" type="submit">Search</button>
+                    <form class="d-flex search-bar" role="search" method="GET">
+                        <input class="form-control me-2" name = "s" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline" type="submit" name="envoyer">Search</button>
                     </form>
 
                     <div class="btn-group">
@@ -73,8 +80,7 @@
 
                 </div>
             </nav>
-
-
+        
 
         </header>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
