@@ -1,7 +1,5 @@
+<?php include('header.php'); ?>
 <hmtl>
-    <head>
-    <?php include('header.php'); ?>
-    </head>
     <body>
         <section class="afficher_entreprise">
         <?php
@@ -18,6 +16,6 @@
             }
         ?>
         </section>
-    <?php include('footer.php'); ?>
     </body>
 </html>
+<?php include('footer.php'); ?>
