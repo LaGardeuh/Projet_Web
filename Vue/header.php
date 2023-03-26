@@ -23,7 +23,7 @@
                         Profil
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="Login.php">Déconnexion</a></li>
+                        <li><a class="dropdown-item" href="../Controler/Deconnexion.php">Déconnexion</a></li>
                     </ul>
                 </li>
             </div>
