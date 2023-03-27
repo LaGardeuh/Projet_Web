@@ -5,6 +5,8 @@
         <title>Connexion</title>
         <link rel="stylesheet" type="text/css" href="..\CSS\Formulaire_Connexion_style.css">  
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="manifest" href="/manifest/manifest.webmanifest">
+
 
   
     </head>
@@ -42,6 +44,6 @@
     </html>    
     </body>
 
-
+    <script src="JS\Service_Workers.js"></script>
 </html>
 
