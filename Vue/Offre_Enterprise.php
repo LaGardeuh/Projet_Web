@@ -12,6 +12,9 @@
         <main>Rémunération : <?php echo $id["off_remuneration"] ?></main>
         <main>Date de début : <?php echo $id["off_date"] ?></main>
         <main>Nombre de place : <?php echo $id["off_nombre_place"] ?></main>
+        <form method="post" action="">
+        <input type="submit" name="postulant" value="Postuler">
+        </form>
     </body>
 </html>
 <?php include('footer.php'); ?>

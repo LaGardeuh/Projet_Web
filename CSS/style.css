@@ -52,3 +52,11 @@ footer {
 	left: 0;
 	right: 0;
 }
+input[type="submit"] {
+    background-color: #FEC845;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
