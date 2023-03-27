@@ -1,13 +1,13 @@
 <!-- <?php
-        // Vérifier si le formulaire a été soumis
-        if (isset($_POST['type'])) {
-            $type = $_POST['type'];
-            $h1 = $type == 'etudiant' ? 'Créer compte étudiant' : 'Créer compte pilote';
-        } else {
-            $type = '';
-            $h1 = 'Choisir le type de compte ';
-        }
-        ?> -->
+// Vérifier si le formulaire a été soumis
+if (isset($_POST['type'])) {
+    $type = $_POST['type'];
+    $h1 = $type == 'etudiant' ? 'Créer compte étudiant' : 'Créer compte pilote';
+} else {
+    $type = '';
+    $h1 = 'Menu Création ';
+}
+?> -->
 <!DOCTYPE html>
 <html>
 
@@ -15,6 +15,7 @@
     <meta charset="UTF-8">
     <title>Inscription</title>
     <link rel="stylesheet" type="text/css" href="..\CSS\formulaire_create_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -27,46 +28,46 @@
         <script>
             // Définir les options pour la liste déroulante "Promotion"
             var promotions = [{
-                    value: 'A1',
-                    text: 'A1'
-                },
-                {
-                    value: 'A2',
-                    text: 'A2'
-                },
-                {
-                    value: 'A3',
-                    text: 'A3'
-                },
-                {
-                    value: 'A4',
-                    text: 'A4'
-                },
-                {
-                    value: 'A5',
-                    text: 'A5'
-                }
+                value: 'A1',
+                text: 'A1'
+            },
+            {
+                value: 'A2',
+                text: 'A2'
+            },
+            {
+                value: 'A3',
+                text: 'A3'
+            },
+            {
+                value: 'A4',
+                text: 'A4'
+            },
+            {
+                value: 'A5',
+                text: 'A5'
+            }
             ];
             var villes = [{
-                    value: 'saint_nazaire',
-                    text: 'Saint Nazaire'
-                },
-                {
-                    value: 'paris',
-                    text: 'Paris'
-                },
-                {
-                    value: 'lille',
-                    text: 'Lille'
-                },
-                {
-                    value: 'bordeaux',
-                    text: 'Bordeaux'
-                },
-                {
-                    value: 'la_rochelle',
-                    text: 'La Rochelle'
-                }
+                value: 'saint_nazaire',
+                text: 'Saint Nazaire'
+            },
+            {
+                value: 'paris',
+                text: 'Paris'
+            },
+            {
+                value: 'lille',
+                text: 'Lille'
+            },
+            {
+                value: 'bordeaux',
+                text: 'Bordeaux'
+            },
+            {
+                value: 'la_rochelle',
+                text: 'La Rochelle'
+            }
             ];
 
             // Fonction pour générer le formulaire en fonction du type de compte sélectionné
@@ -154,7 +155,7 @@
                     formHtml += '<a href="Formulaire_Connexion.php" class="hyperlink" type="hyperlink">Vous avez déjà un compte ?</a>';
                 }
 
-                /* if (type == 'offre_de_stage') {
+                 if (type == 'offre_de_stage') {
                     var formHtml = '';
                     formHtml += '<label for="competences">Compétences :</label>';
                     formHtml += '<input type="text" id="competences" name="competences"><br>';
@@ -184,7 +185,7 @@
 
                     formHtml += '<input type="submit" value="Créer compte entreprise">';
                     formHtml += '<a href="connexion.php">Vous avez déjà un compte ?</a>';
-                } */
+                } 
                 // Mettre à jour le formulaire dans le document HTML
                 var formDiv = document.getElementById('form');
                 formDiv.innerHTML = formHtml;
@@ -194,30 +195,31 @@
 
     <body>
         <div class="colonne">
-        
+
             <div class="container">
                 <div class="header">
-                    <img src="..\Image\logo_cesi_ton_stage.jpg" alt="logo">    
+                    <img src="..\Image\logo_cesi_ton_stage.jpg" alt="logo">
                 </div>
-            <h1>Choisir le type de compte</h1>
-            
-            <!-- Liste déroulante "Type de compte" -->
-            <form method="post" action="">
-                
-            
-            <label for="type">Type de compte :  </label>
-            <select title="Sélectionnez le type de compte à créer" type="type" name="type" id="type" onchange="generateForm()" required>
-                <option value="">Choisir un type</option>
-                <option value="etudiant">Étudiant</option>
-                <option value="pilote">Pilote</option>
-                <option value="entreprise">Entreprise</option>
-                <!-- <option value="offre_de_stage">Offre de Stage</option> -->
-            </select><br><br>
+                <h1>Menu Création</h1>
 
-            <!-- Div pour le formulaire généré dynamiquement -->
-            <div id="form"></div>
-            </form><br>
-        </div>
+                <!-- Liste déroulante "Type de compte" -->
+                <form method="post" action="">
+
+
+                    <label for="type">Type de compte : </label>
+                    <select title="Sélectionnez le type de compte à créer" type="type" name="type" id="type"
+                        onchange="generateForm()" required>
+                        <option value="">Choisir un type</option>
+                        <option value="etudiant">Étudiant</option>
+                        <option value="pilote">Pilote</option>
+                        <option value="entreprise">Entreprise</option>
+                        <option value="offre_de_stage">Offre de Stage</option>
+                    </select><br><br>
+
+                    <!-- Div pour le formulaire généré dynamiquement -->
+                    <div id="form"></div>
+                </form><br>
+            </div>
     </body>
 
     </html>

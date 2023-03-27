@@ -5,19 +5,24 @@ body {
     background-clip: border-box;
     background-origin: padding-box;
     background-repeat: no-repeat;
-    background-image: url('../Image/main.jpg');
+    /* background-image: url('../Image/main.jpg'); */
     margin: 0;
     padding: 0;
     position: relative;
     width: 100%;
 }
 
+
+
+
+
+
 .container{
     background: #f2f2f2 none repeat scroll 0 0;
-    width: 500px;
+    /* width: 500px;  */
     height: 100%;
     bottom: 0;
-    right: 0;
+    /* right: 0; */
     position: fixed;
     border: solid;
 }
@@ -101,4 +106,23 @@ form a[type="hyperlink"]:hover {
 form a[type="hyperlink"]:active {
     background: #f89e02;
     color: #FEC845;
-  }
+  } 
+
+
+
+@media (min-width: 768px){
+    body{
+        background-image: url('../Image/main.jpg');
+    }
+
+    .container{
+        width: 500px;
+        right: 0;
+    }
+}
+
+@media (max-width: 768px){
+    .container{
+        width: 100%; 
+    }
+}
