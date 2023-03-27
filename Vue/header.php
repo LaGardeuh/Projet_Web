@@ -1,5 +1,5 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=bddweb;','root','');
+$bdd = new PDO('mysql:host=localhost;dbname=bdd_web;','root','');
 $all_enterprise = $bdd->query('SELECT * FROM entreprise INNER JOIN offre WHERE entreprise.ent_id = offre.ent_id ORDER BY offre.ent_id DESC');
 if(isset($_GET['s']) AND !empty($_GET['s'])){
     $recherche = htmlspecialchars($_GET['s']);
