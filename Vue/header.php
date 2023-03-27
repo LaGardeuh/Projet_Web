@@ -1,10 +1,11 @@
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_web;','root','');
-$all_enterprise = $bdd->query('SELECT * FROM entreprise INNER JOIN offre WHERE entreprise.ent_id = offre.ent_id ORDER BY offre.ent_id DESC');
+$all_enterprise = $bdd->query('SELECT ent_nom,ent_id FROM entreprise ORDER BY ent_id DESC');
 if(isset($_GET['s']) AND !empty($_GET['s'])){
-    $recherche = htmlspecialchars($_GET['s']);
-    $all_enterprise = $bdd->query('SELECT * FROM entreprise INNER JOIN offre WHERE entreprise.ent_id = offre.ent_id AND off_entreprise LIKE "%'.$recherche.'%" OR off_type_promo LIKE "%'.$recherche.'%" ORDER BY off_id DESC');
+    $search = htmlspecialchars($_GET['s']);
+    $all_enterprise = $bdd->query('SELECT ent_nom,ent_id FROM entreprise WHERE ent_nom LIKE "%'.$search.'%" ORDER BY ent_id DESC');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -29,43 +30,20 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
             </div>
 
             <form class="d-flex search-bar" role="search" method="get">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" name ="s" placeholder="Enterprise Name" aria-label="Search">
+                    <button class="btn btn-outline" type="submit">Search</button>
             </form>
-
             <div class="btn-group">
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Profil
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="../Controler/Deconnexion.php">Déconnexion</a></li>
+                    <li><a class="dropdown-item" href="Login.php">Déconnexion</a></li>
                     </ul>
                 </li>
             </div>
-
         </div>
     </nav>
 </header>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<script src="JS\header_script.js"></script>
-                </div>
-                <form class="d-flex search-bar" role="search" method="get">
-                    <input class="form-control me-2" type="search" name ="s" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline" type="submit">Search</button>
-                </form>
-                <div class="btn-group">
-                    <li class="nav-item">
-                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Profil
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="Login.php">Déconnexion</a></li>
-                        </ul>
-                    </li>
-                </div>
-            </div>
-        </nav>
-    </header>
 </html>
