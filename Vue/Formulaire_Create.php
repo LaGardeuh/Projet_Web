@@ -39,6 +39,7 @@ include('..\Controler\verif_connexion.php');
                 // Générer le formulaire approprié
                 var formHtml = '';
                 if (type == 'etudiant') {
+                    formHtml += '<form method="post" action="">';
                     formHtml += '<label for="nom">Nom :</label>';
                     formHtml += '<input type="text" name="nom" id="nom" required><br>';
 
@@ -47,14 +48,6 @@ include('..\Controler\verif_connexion.php');
 
                     formHtml += '<label for="email">Email :</label>';
                     formHtml += '<input type="email" name="email" id="email" required><br>';
-
-                    formHtml += '<label for="localite">Localité(s) :</label>';
-                    formHtml += '<select id="localite" name="localite">'
-
-                    formHtml += '<?php
-                                    include('..\Controler\GetVilleCentre.php');
-                                    ?>'
-                    formHtml += '</select><br>'
 
                     formHtml += '<label for="localite">Localité(s) :</label>';
                     formHtml += '<select id="localite" name="localite">'
@@ -75,10 +68,12 @@ include('..\Controler\verif_connexion.php');
                     formHtml += '<input type="password" name="mdp" id="mdp" required><br>';
                     formHtml += '<input type="submit" value="Inscription">';
                     formHtml += '<a href="Formulaire_Connexion.php" class="hyperlink" type="hyperlink">Vous avez déjà un compte ?</a>';
+                    formHtml += '</form>';
                 }
 
 
                 if (type == 'pilote') {
+                    formHtml += '<form method="post" action="">';
                     formHtml += '<label for="nom">Nom du Pilote :</label>';
                     formHtml += '<input type="text" name="nom" id="nom" required><br>';
 
@@ -107,10 +102,12 @@ include('..\Controler\verif_connexion.php');
                     formHtml += '<input type="password" name="mdp" id="mdp" required><br>';
                     formHtml += '<input type="submit" value="Inscription">';
                     formHtml += '<a href="Formulaire_Connexion.php" class="hyperlink" type="hyperlink">Vous avez déjà un compte ?</a>';
+                    formHtml += '</form>';
                 }
 
                 if (type == 'entreprise') {
                     var formHtml = '';
+                    formHtml += '<form method="post" action="">';
                     formHtml += '<label for="nom_entreprise">Nom de l\'entreprise:</label>';
                     formHtml += '<input type="text" id="nom_entreprise" name="nom_entreprise"><br>';
 
@@ -137,10 +134,12 @@ include('..\Controler\verif_connexion.php');
 
                     formHtml += '<input type="submit" value="Créer compte entreprise">';
                     formHtml += '<a href="Formulaire_Connexion.php" class="hyperlink" type="hyperlink">Vous avez déjà un compte ?</a>';
+                    formHtml += '</form>';
                 }
 
-                /* if (type == 'offre_de_stage') {
+                 if (type == 'offre_de_stage') {
                     var formHtml = '';
+                    formHtml += '<form method="post" action="">';
                     formHtml += '<label for="competences">Compétences :</label>';
                     formHtml += '<input type="text" id="competences" name="competences"><br>';
 
@@ -170,7 +169,8 @@ include('..\Controler\verif_connexion.php');
 
                     formHtml += '<input type="submit" value="Créer compte entreprise">';
                     formHtml += '<a href="connexion.php">Vous avez déjà un compte ?</a>';
-                } */
+                    formHtml += '</form>';
+                } 
                 // Mettre à jour le formulaire dans le document HTML
                 var formDiv = document.getElementById('form');
                 formDiv.innerHTML = formHtml;
@@ -197,7 +197,7 @@ include('..\Controler\verif_connexion.php');
                 <option value="etudiant">Étudiant</option>
                 <option value="pilote">Pilote</option>
                 <option value="entreprise">Entreprise</option>
-                <!-- <option value="offre_de_stage">Offre de Stage</option> -->
+                <option value="offre_de_stage">Offre de Stage</option>
             </select><br><br>
 
             <!-- Div pour le formulaire généré dynamiquement -->
