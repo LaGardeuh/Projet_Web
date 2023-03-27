@@ -10,14 +10,16 @@ include('..\Controler\verif_connexion.php');
             $h1 = $type == 'etudiant' ? 'Créer compte étudiant' : 'Créer compte pilote';
         } else {
             $type = '';
-            $h1 = 'Choisir le type de compte';
+            $h1 = 'Choisir le type de compte ';
         }
         ?> -->
 <!DOCTYPE html>
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Inscription</title>
+    <link rel="stylesheet" type="text/css" href="..\CSS\formulaire_create_style.css">
 </head>
 
 <body>
@@ -54,7 +56,15 @@ include('..\Controler\verif_connexion.php');
                                     ?>'
                     formHtml += '</select><br>'
 
-                    formHtml += '<label for="promo">Promotion :</label>';
+                    formHtml += '<label for="localite">Localité(s) :</label>';
+                    formHtml += '<select id="localite" name="localite">'
+
+                    formHtml += '<?php
+                                    include('..\Controler\GetVilleCentre.php');
+                                    ?>'
+                    formHtml += '</select><br>'
+
+                    formHtml += '<label for="promo">Promotion :    </label>';
                     formHtml += '<select name="promo" id="promo">';
                     formHtml += '<?php
                                     include('..\Controler\GetPromotion.php');
@@ -64,6 +74,7 @@ include('..\Controler\verif_connexion.php');
                     formHtml += '<label for="mdp">Mot de passe :</label>';
                     formHtml += '<input type="password" name="mdp" id="mdp" required><br>';
                     formHtml += '<input type="submit" value="Inscription">';
+                    formHtml += '<a href="Formulaire_Connexion.php" class="hyperlink" type="hyperlink">Vous avez déjà un compte ?</a>';
                 }
 
 
@@ -95,6 +106,7 @@ include('..\Controler\verif_connexion.php');
                     formHtml += '<label for="mdp">Mot de passe :</label>';
                     formHtml += '<input type="password" name="mdp" id="mdp" required><br>';
                     formHtml += '<input type="submit" value="Inscription">';
+                    formHtml += '<a href="Formulaire_Connexion.php" class="hyperlink" type="hyperlink">Vous avez déjà un compte ?</a>';
                 }
 
                 if (type == 'entreprise') {
@@ -102,20 +114,20 @@ include('..\Controler\verif_connexion.php');
                     formHtml += '<label for="nom_entreprise">Nom de l\'entreprise:</label>';
                     formHtml += '<input type="text" id="nom_entreprise" name="nom_entreprise"><br>';
 
-                    formHtml += '<label for="localite">Localité:</label>';
+                    formHtml += '<label for="localite">Localité:    </label>';
                     formHtml += '<select id="localite" name="localite">'
                     formHtml += '<?php
                                     include('..\Controler\GetVille.php');
                                     ?>'
                     formHtml += '</select><br>'
 
-                    formHtml += '<label for="secteur_activite">Secteur d\'activité:</label>';
+                    formHtml += '<label for="secteur_activite">Secteur d\'activité:    </label>';
                     formHtml += '<select id="secteur_activite" name="secteur_activite">';
                     formHtml += '<option value="BTP">BTP</option>'
                     formHtml += '<option value="Info">Informatique</option>'
                     formHtml += '<option value="Generaliste">Généraliste</option>'
                     formHtml += '<option value="S3E">S3E</option>'
-                    formHtml += '</select><br>'
+                    formHtml += '</select><br><br>'
 
                     formHtml += '<label for="nombre_stagiaires">Nombre de stagiaires:</label>'
                     formHtml += '<input type="number" id="nombre_stagiaires" name="nombre_stagiaires"><br>';
@@ -124,21 +136,22 @@ include('..\Controler\verif_connexion.php');
                     formHtml += '<input type="number" id="confiance_pilote" name="confiance_pilote" min="1" max="5"><br>'
 
                     formHtml += '<input type="submit" value="Créer compte entreprise">';
+                    formHtml += '<a href="Formulaire_Connexion.php" class="hyperlink" type="hyperlink">Vous avez déjà un compte ?</a>';
                 }
 
-                if (type == 'offre_de_stage') {
+                /* if (type == 'offre_de_stage') {
                     var formHtml = '';
                     formHtml += '<label for="competences">Compétences :</label>';
                     formHtml += '<input type="text" id="competences" name="competences"><br>';
 
-                    formHtml += '<label for="localite">Localité(s) :</label>';
+                    formHtml += '<label for="localite">Localité(s) :    </label>';
                     formHtml += '<select id="localite" name="localite">'
                     formHtml += '<?php
                                     include('..\Controler\GetVille.php');
                                     ?>'
                     formHtml += '</select><br>'
 
-                    formHtml += '<label for="entreprise">Entreprise :</label>';
+                    formHtml += '<label for="entreprise">Entreprise :    </label>';
                     formHtml += '<select id="entreprise" name="entreprise">';
                     formHtml += '<?php
                                     include('..\Controler\GetEntreprise.php');
@@ -156,7 +169,8 @@ include('..\Controler\verif_connexion.php');
 
 
                     formHtml += '<input type="submit" value="Créer compte entreprise">';
-                }
+                    formHtml += '<a href="connexion.php">Vous avez déjà un compte ?</a>';
+                } */
                 // Mettre à jour le formulaire dans le document HTML
                 var formDiv = document.getElementById('form');
                 formDiv.innerHTML = formHtml;
@@ -165,33 +179,31 @@ include('..\Controler\verif_connexion.php');
     </head>
 
     <body>
-        <h1>Choisir le type de compte</h1>
+        <div class="colonne">
+        
+            <div class="container">
+                <div class="header">
+                    <img src="..\Image\logo_cesi_ton_stage.jpg" alt="logo">    
+                </div>
+            <h1>Choisir le type de compte</h1>
+            
+            <!-- Liste déroulante "Type de compte" -->
+            <form method="post" action="">
+                
+            
+            <label for="type">Type de compte :  </label>
+            <select title="Sélectionnez le type de compte à créer" type="type" name="type" id="type" onchange="generateForm()" required>
+                <option value="">Choisir un type</option>
+                <option value="etudiant">Étudiant</option>
+                <option value="pilote">Pilote</option>
+                <option value="entreprise">Entreprise</option>
+                <!-- <option value="offre_de_stage">Offre de Stage</option> -->
+            </select><br><br>
 
-        <!-- Liste déroulante "Type de compte" -->
-        <label for="type">Type de compte :</label>
-        <select name="type" id="type" onchange="generateForm()" required>
-            <option value="">Choisir un type</option>
-            <option value="etudiant">Étudiant</option>
-            <option value="pilote">Pilote</option>
-            <option value="entreprise">Entreprise</option>
-            <option value="offre_de_stage">Offre de Stage</option>
-        </select><br>
-
-        <!-- Div pour le formulaire généré dynamiquement -->
-        <div id="form"></div>
-
-        <!-- <?php
-
-                $QueryGetVille = $pdo->query("SELECT ville_ville from ville where ville_centre = 1");
-                while ($donnees = $QueryGetVille->fetch()) {
-                ?>
-            <p>
-                <strong>Jeu</strong> : <?php echo $donnees['ville_ville']; ?><br />
-            </p>
-        <?php
-                }
-                $QueryGetVille->closeCursor(); // Termine le traitement de la requête
-        ?> -->
+            <!-- Div pour le formulaire généré dynamiquement -->
+            <div id="form"></div>
+            </form><br>
+        </div>
     </body>
 
     </html>

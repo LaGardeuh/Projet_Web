@@ -32,7 +32,7 @@ $aff_error = $error;
 
     <div class="container">
         <div class="header">
-            <img src="Image\logo_cesi_ton_stage.jpg" alt="">
+            <img src="..\Image\logo_cesi_ton_stage.jpg" alt="test">
         </div>
         <h1>CESI ton Stage</h1>
         <form method="post" action="..\Controler\Connexion.php">
