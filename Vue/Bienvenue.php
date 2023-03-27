@@ -1,10 +1,6 @@
 <?php
-// Inclure le fichier secret.php
+//
 include('..\Controler\verif_connexion.php');
-
-// session_start();
-// if(!isset($_SESSION['user']))
-//     header('Location: ../Vue/Login.php');
 ?>
 
 <!DOCTYPE html>

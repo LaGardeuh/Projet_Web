@@ -1,3 +1,8 @@
+<?php
+include('..\Controler\verif_connexion.php');
+?>
+
+
 <!-- <?php
         // Vérifier si le formulaire a été soumis
         if (isset($_POST['type'])) {
@@ -23,50 +28,6 @@
     <head>
         <title>Inscription</title>
         <script>
-            // Définir les options pour la liste déroulante "Promotion"
-            var promotions = [{
-                    value: 'A1',
-                    text: 'A1'
-                },
-                {
-                    value: 'A2',
-                    text: 'A2'
-                },
-                {
-                    value: 'A3',
-                    text: 'A3'
-                },
-                {
-                    value: 'A4',
-                    text: 'A4'
-                },
-                {
-                    value: 'A5',
-                    text: 'A5'
-                }
-            ];
-            var villes = [{
-                    value: 'saint_nazaire',
-                    text: 'Saint Nazaire'
-                },
-                {
-                    value: 'paris',
-                    text: 'Paris'
-                },
-                {
-                    value: 'lille',
-                    text: 'Lille'
-                },
-                {
-                    value: 'bordeaux',
-                    text: 'Bordeaux'
-                },
-                {
-                    value: 'la_rochelle',
-                    text: 'La Rochelle'
-                }
-            ];
-
             // Fonction pour générer le formulaire en fonction du type de compte sélectionné
             function generateForm() {
                 // Récupérer le type de compte sélectionné
@@ -85,11 +46,19 @@
                     formHtml += '<label for="email">Email :</label>';
                     formHtml += '<input type="email" name="email" id="email" required><br>';
 
+                    formHtml += '<label for="localite">Localité(s) :</label>';
+                    formHtml += '<select id="localite" name="localite">'
+
+                    formHtml += '<?php
+                                    include('..\Controler\GetVilleCentre.php');
+                                    ?>'
+                    formHtml += '</select><br>'
+
                     formHtml += '<label for="promo">Promotion :</label>';
                     formHtml += '<select name="promo" id="promo">';
-                    for (var i = 0; i < promotions.length; i++) {
-                        formHtml += '<option value="' + promotions[i].value + '">' + promotions[i].text + '</option>';
-                    }
+                    formHtml += '<?php
+                                    include('..\Controler\GetPromotion.php');
+                                    ?>'
                     formHtml += '</select><br>';
 
                     formHtml += '<label for="mdp">Mot de passe :</label>';
@@ -108,11 +77,19 @@
                     formHtml += '<label for="email">Email :</label>';
                     formHtml += '<input type="email" name="email" id="email" required><br>';
 
+                    formHtml += '<label for="localite">Localité(s) :</label>';
+                    formHtml += '<select id="localite" name="localite">'
+
+                    formHtml += '<?php
+                                    include('..\Controler\GetVilleCentre.php');
+                                    ?>'
+                    formHtml += '</select><br>'
+
                     formHtml += '<label for="promo">Promotion en charge :</label>';
                     formHtml += '<select name="promo" id="promo">';
-                    for (var i = 0; i < promotions.length; i++) {
-                        formHtml += '<option value="' + promotions[i].value + '">' + promotions[i].text + '</option>';
-                    }
+                    formHtml += '<?php
+                                    include('..\Controler\GetPromotion.php');
+                                    ?>'
                     formHtml += '</select><br>';
 
                     formHtml += '<label for="mdp">Mot de passe :</label>';
@@ -127,9 +104,9 @@
 
                     formHtml += '<label for="localite">Localité:</label>';
                     formHtml += '<select id="localite" name="localite">'
-                    for (var i = 0; i < villes.length; i++) {
-                        formHtml += '<option value="' + villes[i].value + '">' + villes[i].text + '</option>';
-                    }
+                    formHtml += '<?php
+                                    include('..\Controler\GetVille.php');
+                                    ?>'
                     formHtml += '</select><br>'
 
                     formHtml += '<label for="secteur_activite">Secteur d\'activité:</label>';
@@ -156,15 +133,16 @@
 
                     formHtml += '<label for="localite">Localité(s) :</label>';
                     formHtml += '<select id="localite" name="localite">'
-                    for (var i = 0; i < villes.length; i++) {
-                        formHtml += '<option value="' + villes[i].value + '">' + villes[i].text + '</option>';
-                    }
+                    formHtml += '<?php
+                                    include('..\Controler\GetVille.php');
+                                    ?>'
                     formHtml += '</select><br>'
 
                     formHtml += '<label for="entreprise">Entreprise :</label>';
                     formHtml += '<select id="entreprise" name="entreprise">';
-                    formHtml += '<option value="Valeuriad">Valeuriad</option>'
-                    formHtml += '<option value="Engie">Engie</option>'
+                    formHtml += '<?php
+                                    include('..\Controler\GetEntreprise.php');
+                                    ?>'
                     formHtml += '</select><br>'
 
                     formHtml += '<label for="duree">Durée du Stage :</label>'
@@ -201,6 +179,19 @@
 
         <!-- Div pour le formulaire généré dynamiquement -->
         <div id="form"></div>
+
+        <!-- <?php
+
+                $QueryGetVille = $pdo->query("SELECT ville_ville from ville where ville_centre = 1");
+                while ($donnees = $QueryGetVille->fetch()) {
+                ?>
+            <p>
+                <strong>Jeu</strong> : <?php echo $donnees['ville_ville']; ?><br />
+            </p>
+        <?php
+                }
+                $QueryGetVille->closeCursor(); // Termine le traitement de la requête
+        ?> -->
     </body>
 
     </html>

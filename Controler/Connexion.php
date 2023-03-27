@@ -11,10 +11,11 @@
         $data = $check->fetch();
         $row = $check->rowCount();
 
-
-        if ($_POST['email'] === $data['ele_mail'] && $_POST['password'] === $data['ele_mdp']) {
+        // $password = hash('sha526', $password);
+        if ($email === $data['ele_mail'] && $password === $data['ele_mdp']) {
             // Redirige l'utilisateur vers la page d'accueil s'il est authentifié
-            $_SESSION['user'] = $data['ele_prenom'];
+            $_SESSION['prenom'] = $data['ele_prenom'];
+            $_SESSION['nom'] = $data['ele_nom'];
             header('Location: ../Vue/Bienvenue.php');
             exit;
         } else {
