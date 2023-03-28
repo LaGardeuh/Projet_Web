@@ -1,9 +1,8 @@
 <?php
+include('header.php'); 
 include('..\Controler\verif_connexion.php');
 ?>
-
 <!DOCTYPE html>
-<?php include('header.php'); ?>
 <hmtl>
     <body>
         <section class="show_enterprise">

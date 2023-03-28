@@ -1,6 +1,7 @@
 <?php 
 include('header.php');
 include('..\Controler\verif_connexion.php');
+
 $id = $_GET["id"];
 $name = $_GET['name'];
 $detail = $bdd->query('SELECT * FROM offre WHERE off_id LIKE "%'.$id.'%"'); 
