@@ -1,5 +1,4 @@
 <?php
-//
 include('..\Controler\verif_connexion.php');
 ?>
 

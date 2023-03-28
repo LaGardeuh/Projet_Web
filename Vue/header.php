@@ -16,6 +16,7 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="..\CSS\style.css">
 <link rel="stylesheet" type="text/css" href="..\CSS\header_style.css">
+<meta name="viewport">
 <script src="JS\header_script.js"></script>
 <header>
     <nav class="navbar bg-body-tertiary fixed-top">
