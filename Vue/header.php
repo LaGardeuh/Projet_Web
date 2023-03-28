@@ -1,4 +1,6 @@
+
 <?php
+session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_web;','root','');
 $all_enterprise = $bdd->query('SELECT ent_nom,ent_id FROM entreprise ORDER BY ent_id DESC');
 if(isset($_GET['s']) AND !empty($_GET['s'])){

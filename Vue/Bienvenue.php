@@ -1,6 +1,5 @@
 <?php
-//
-// include('..\Controler\verif_connexion.php');
+include('..\Controler\verif_connexion.php');
 ?>
 
 <!DOCTYPE html>
