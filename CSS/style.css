@@ -52,3 +52,13 @@ footer {
 	left: 0;
 	right: 0;
 }
+.button {
+    background-color: #FEC845;
+    box-shadow: 0 5px 0 #c69b37;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+} 
