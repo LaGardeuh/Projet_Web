@@ -13,13 +13,16 @@ $entreprise = $requete->fetch();
 // Vérifier si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Récupérer les valeurs du formulaire
+
   $nom = $_POST['nom'];
   $secteur_activite = $_POST['secteur_activite'];
   $nombre_stagiaires = $_POST['nombre_stagiaires'];
+  $confiance_pilote = $_POST['confiance_pilote'];
+
 
   // Mettre à jour les informations de l'entreprise dans la base de données
-  $requete = $pdo->prepare("UPDATE entreprise SET ent_nom = :nom, ent_secteur_activite = :secteur_activite, ent_place_utilise = :nombre_stagiaires WHERE ent_id = :id");
-  $requete->execute(array('nom' => $nom, 'secteur_activite' => $secteur_activite, 'nombre_stagiaires' => $nombre_stagiaires, 'id' => $entrepriseId));
+  $requete = $pdo->prepare("UPDATE entreprise SET ent_nom = :nom, ent_secteur_activite = :secteur_activite, ent_place_utilise = :nombre_stagiaires, ent_confiance_pilote = :confiance_pilote WHERE ent_id = :id");
+  $requete->execute(array('nom' => $nom, 'secteur_activite' => $secteur_activite, 'nombre_stagiaires' => $nombre_stagiaires, 'confiance_pilote' => $confiance_pilote, 'id' => $entrepriseId));
 
   // Redirection vers une page de confirmation
   header('Location: ../Vue/Bienvenue.php');
