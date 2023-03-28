@@ -17,7 +17,7 @@ $detail = $detail->fetch();
         Nombre de place : <?php echo $detail['off_nombre_place']; ?> <br>
         Rémunération : <?php echo $detail['off_remuneration']; ?> <br>
     </main>
-    <a href="Postuler.php" class="button">Postuler</a>
+    <a href="Postuler.php?id=<?php echo $id?>" class="button">Postuler</a>
 </html>
 
 <?php include('footer.php'); ?>
