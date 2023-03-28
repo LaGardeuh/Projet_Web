@@ -89,7 +89,7 @@
     display: inline-block;
     padding: 10px 20px;
     width: 85%;
-    background-color: rgb(222, 222, 222);
+    background-color: lightgray;
     color: black;
     text-decoration: none;
     border-radius: 5px;
@@ -97,6 +97,12 @@
   }
   
   .offcanvas-body a:hover {
-    background-color: lightgray;
+    background-color: #fec845;
+  }
+
+  a.dropdown-item{
+
+    margin-left: 5%;
+    width: auto;
   }
   

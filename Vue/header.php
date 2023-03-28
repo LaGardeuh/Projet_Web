@@ -2,10 +2,10 @@
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_web;','root','');
-$all_enterprise = $bdd->query('SELECT ent_nom,ent_id FROM entreprise ORDER BY ent_id DESC');
+$all_company = $bdd->query('SELECT ent_nom,ent_id FROM entreprise ORDER BY ent_id DESC');
 if(isset($_GET['s']) AND !empty($_GET['s'])){
     $search = htmlspecialchars($_GET['s']);
-    $all_enterprise = $bdd->query('SELECT ent_nom,ent_id FROM entreprise WHERE ent_nom LIKE "%'.$search.'%" ORDER BY ent_id DESC');
+    $all_company = $bdd->query('SELECT ent_nom,ent_id FROM entreprise WHERE ent_nom LIKE "%'.$search.'%" ORDER BY ent_id DESC');
 }
 
 ?>
@@ -34,7 +34,7 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
             </div>
 
             <form class="d-flex search-bar" role="search" method="get">
-                    <input class="form-control me-2" type="search" name ="s" placeholder="Enterprise Name" aria-label="Search">
+                    <input class="form-control me-2" type="search" name ="s" placeholder="Company Name" aria-label="Search">
                     <button class="btn btn-outline" type="submit">Search</button>
             </form>
             <div class="btn-group">

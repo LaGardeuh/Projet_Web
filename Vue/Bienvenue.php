@@ -13,12 +13,12 @@ include('..\Controler\verif_connexion.php');
 </head>
     <body>
         <h1 type="title">Liste des Entreprises</h1><br>
-        <section class="show_enterprise">
+        <section class="show_company">
         <?php
-            if ($all_enterprise->rowCount() > 0){
-                 while($enterprise = $all_enterprise->fetch()){
+            if ($all_company->rowCount() > 0){
+                 while($company = $all_company->fetch()){
                  ?>
-                 <main><a href="Enterprise_page.php?id=<?php echo $enterprise['ent_id']; ?>"><?php echo $enterprise['ent_nom']; ?></a></main>
+                 <main><a href="Company_page.php?id=<?php echo $company['ent_id']; ?>"><?php echo $company['ent_nom']; ?></a></main>
                  <?php 
                 }
             }else{  

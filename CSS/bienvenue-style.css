@@ -17,18 +17,27 @@ body {
     }
   }
 
-main a{
+  main a {
+    color: #000;
+    position: relative;
     text-decoration: none;
-    color: black;
-    display: inline-block;
-    padding: 10px;
-    border: 2px solid #fec845;
-    border-radius: 20px;
-    background-color: #fec845;
-	position: relative;
-	font-weight: bold;
-    margin-right: 100px;
-}
+  }
+  
+  main a::before {
+    background: #ffffff;
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+  }
+  
+  main a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 
 body h1{
     margin-left: 10%;
