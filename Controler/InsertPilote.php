@@ -10,7 +10,7 @@ $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
 $promo = $_POST['promo'];
 
-$QueryInsertUser = $pdo->prepare("INSERT INTO `user` (`use_nom`, `use_prenom`, `use_mdp`, `use_mail`, `ville_id`, `stat_id`, `role_id`) VALUES ('$nom','$prenom','$mdp','$email','$localite', '1', '2')");
+$QueryInsertUser = $pdo->prepare("INSERT INTO `user` (`use_nom`, `use_prenom`, `use_mdp`, `use_mail`, `ville_id`, `stat_id`, `role_id`) VALUES ('$nom','$prenom','$mdp','$email','$localite', '4', '1')");
 
 $QueryInsertUser->execute();
 $res = $QueryInsertUser->fetch();

@@ -1,24 +1,3 @@
-<!-- <?php
-        // Vérifie si l'utilisateur a soumis le formulaire
-        if (isset($_POST['submit'])) {
-            // Vérifie si le nom d'utilisateur et le mot de passe sont corrects
-            if ($_POST['email'] === 'admin@gmail.com' && $_POST['password'] === 'admin') {
-                // Redirige l'utilisateur vers la page d'accueil s'il est authentifié
-                header('Location: Bienvenue.php');
-                exit;
-            } else {
-                // Affiche un message d'erreur si les informations d'identification sont incorrectes
-                $error = 'Nom d\'utilisateur ou mot de passe incorrect';
-            }
-        }
-        ?> -->
-
-<!-- <?php
-//include('../Controler/Connexion.php');
-$aff_error = $error;
-?> -->
-
-
 <!DOCTYPE html>
 <html>
 
@@ -48,10 +27,10 @@ $aff_error = $error;
             $err = htmlspecialchars($_GET['login_err']);
 
             switch ($err) {
-                case 'erreur':
+                case 'identifiant':
         ?>
                     <div class="popup">
-                        <span class="message">Nom d'utilisateur ou mot de passe incorrect</span>
+                        <span class="message">Mot de passe ou email incorrect !</span>
                     </div>
 
         <?php

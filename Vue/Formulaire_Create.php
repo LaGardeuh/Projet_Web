@@ -39,7 +39,7 @@ include('..\Controler\verif_connexion.php');
                 // Générer le formulaire approprié
                 var formHtml = '';
                 if (type == 'etudiant') {
-                    formHtml += '<form method="post" action="">';
+                    formHtml += '<form method="post" action="../Controler/InsertEtudiant.php">';
                     formHtml += '<label for="nom">Nom :</label>';
                     formHtml += '<input type="text" name="nom" id="nom" required><br>';
 
@@ -66,14 +66,13 @@ include('..\Controler\verif_connexion.php');
 
                     formHtml += '<label for="mdp">Mot de passe :</label>';
                     formHtml += '<input type="password" name="mdp" id="mdp" required><br>';
-                    formHtml += '<input type="submit" value="Inscription">';
-                    formHtml += '<a href="Formulaire_Connexion.php" class="hyperlink" type="hyperlink">Vous avez déjà un compte ?</a>';
+                    formHtml += '<input type="submit" name="submit" value="Flute de zut">';
                     formHtml += '</form>';
                 }
 
 
                 if (type == 'pilote') {
-                    formHtml += '<form method="post" action="">';
+                    formHtml += '<form method="post" action="../Controler/InsertPilote.php">';
                     formHtml += '<label for="nom">Nom du Pilote :</label>';
                     formHtml += '<input type="text" name="nom" id="nom" required><br>';
 
@@ -107,7 +106,7 @@ include('..\Controler\verif_connexion.php');
 
                 if (type == 'entreprise') {
                     var formHtml = '';
-                    formHtml += '<form method="post" action="">';
+                    formHtml += '<form method="post" action="../Controler/InsertEntreprise.php">';
                     formHtml += '<label for="nom_entreprise">Nom de l\'entreprise:</label>';
                     formHtml += '<input type="text" id="nom_entreprise" name="nom_entreprise"><br>';
 
@@ -137,9 +136,12 @@ include('..\Controler\verif_connexion.php');
                     formHtml += '</form>';
                 }
 
-                 if (type == 'offre_de_stage') {
+                if (type == 'offre_de_stage') {
                     var formHtml = '';
-                    formHtml += '<form method="post" action="">';
+                    formHtml += '<form method="post" action="../Controler/InsertOffre.php">';
+                    formHtml += '<label for="off_nom">Nom de l\'offre :</label>';
+                    formHtml += '<input type="text" id="off_nom" name="off_nom"><br>';
+
                     formHtml += '<label for="competences">Compétences :</label>';
                     formHtml += '<input type="text" id="competences" name="competences"><br>';
 
@@ -157,20 +159,28 @@ include('..\Controler\verif_connexion.php');
                                     ?>'
                     formHtml += '</select><br>'
 
+                    formHtml += '<label for="off_type_promo">Secteur d\'activité:    </label>';
+                    formHtml += '<select id="off_type_promo" name="off_type_promo">';
+                    formHtml += '<option value="BTP">BTP</option>'
+                    formHtml += '<option value="Informatique">Informatique</option>'
+                    formHtml += '<option value="Généraliste">Généraliste</option>'
+                    formHtml += '<option value="S3E">S3E</option>'
+                    formHtml += '</select><br><br>'
+
                     formHtml += '<label for="duree">Durée du Stage :</label>'
                     formHtml += '<input type="text" id="duree" name="duree" min="1" max="5"><br>'
 
-                    formHtml += '<label for="remuneration">Rémunération :</label>'
-                    formHtml += '<input type="text" id="remuneration" name="remuneration"><br>'
+                    formHtml += '<label for="remuneration">Rémunération en euro:</label>'
+                    formHtml += '<input type="number" id="remuneration" name="remuneration"><br>'
 
                     formHtml += '<label for="nombre_de_places">Nombre de Places :</label>'
                     formHtml += '<input type="number" id="nombre_de_places" name="nombre_de_places"><br>';
 
 
-                    formHtml += '<input type="submit" value="Créer compte entreprise">';
-                    formHtml += '<a href="connexion.php">Vous avez déjà un compte ?</a>';
+                    formHtml += '<input type="submit" value="Créer une offre de stage">';
+                    // formHtml += '<a href="connexion.php">Vous avez déjà un compte ?</a>';
                     formHtml += '</form>';
-                } 
+                }
                 // Mettre à jour le formulaire dans le document HTML
                 var formDiv = document.getElementById('form');
                 formDiv.innerHTML = formHtml;
@@ -180,30 +190,32 @@ include('..\Controler\verif_connexion.php');
 
     <body>
         <div class="colonne">
-        
             <div class="container">
                 <div class="header">
-                    <img src="..\Image\logo_cesi_ton_stage.jpg" alt="logo">    
+                    <a href="Bienvenue.php">
+                        <img src="..\Image\logo_cesi_ton_stage.jpg" alt="logo">
+                    </a>
                 </div>
-            <h1>Choisir le type de compte</h1>
-            
-            <!-- Liste déroulante "Type de compte" -->
-            <form method="post" action="">
-                
-            
-            <label for="type">Type de compte :  </label>
-            <select title="Sélectionnez le type de compte à créer" type="type" name="type" id="type" onchange="generateForm()" required>
-                <option value="">Choisir un type</option>
-                <option value="etudiant">Étudiant</option>
-                <option value="pilote">Pilote</option>
-                <option value="entreprise">Entreprise</option>
-                <option value="offre_de_stage">Offre de Stage</option>
-            </select><br><br>
+                <h1>Choisir le type de compte</h1>
 
-            <!-- Div pour le formulaire généré dynamiquement -->
-            <div id="form"></div>
-            </form><br>
-        </div>
+                <!-- Liste déroulante "Type de compte" -->
+                <!-- <form method="post" action=""> -->
+
+
+                    <label for="type">Type de compte : </label>
+                    <select title="Sélectionnez le type de compte à créer" type="type" name="type" id="type" onchange="generateForm()" required>
+                        <option value="">Choisir un type</option>
+                        <option value="etudiant">Étudiant</option>
+                        <option value="pilote">Pilote</option>
+                        <option value="entreprise">Entreprise</option>
+                        <option value="offre_de_stage">Offre de Stage</option>
+                    </select><br><br>
+
+                    <!-- Div pour le formulaire généré dynamiquement -->
+                    <div id="form"></div>
+                <!-- </form> -->
+                <br>
+            </div>
     </body>
 
     </html>
