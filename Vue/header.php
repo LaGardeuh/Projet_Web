@@ -1,7 +1,25 @@
+
+<?php
+session_start();
+$bdd = new PDO('mysql:host=localhost;dbname=bdd_web;','root','');
+$all_enterprise = $bdd->query('SELECT ent_nom,ent_id FROM entreprise ORDER BY ent_id DESC');
+if(isset($_GET['s']) AND !empty($_GET['s'])){
+    $search = htmlspecialchars($_GET['s']);
+    $all_enterprise = $bdd->query('SELECT ent_nom,ent_id FROM entreprise WHERE ent_nom LIKE "%'.$search.'%" ORDER BY ent_id DESC');
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+<title>Page d'accueil</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="..\CSS\style.css">
+<link rel="stylesheet" type="text/css" href="..\CSS\header_style.css">
+<script src="JS\header_script.js"></script>
 <header>
     <nav class="navbar bg-body-tertiary fixed-top">
         <div class="container-fluid">
-
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -13,21 +31,23 @@
             </div>
 
             <form class="d-flex search-bar" role="search" method="get">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" name ="s" placeholder="Enterprise Name" aria-label="Search">
+                    <button class="btn btn-outline" type="submit">Search</button>
             </form>
-
             <div class="btn-group">
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Profil
                     </a>
+                    <?php 
+                    include('../Controler/BtnGestion.php');
+                    ?>
+                    <a class="dropdown-item" href="../Controler/Deconnexion.php">Déconnexion</a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="Login.php">Déconnexion</a></li>
+                    <li><a class="dropdown-item" href="Login.php">Déconnexion</a></li>
                     </ul>
                 </li>
             </div>
-
         </div>
     </nav>
 </header>
