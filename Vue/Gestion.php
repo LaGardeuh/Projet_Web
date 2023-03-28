@@ -29,6 +29,12 @@ include('..\Controler\verif_connexion.php');
             document.getElementById("suppr-entreprise-link").href = "../Model/SupprEntreprise.php?id=" + entrepriseId;
         }
     </script>
+    <?php echo'<a href="#" id="modif-entreprise-link">Modifier l\'entreprise sélectionnée</a>'?>
+    <script>
+        function updateEntrepriseId(entrepriseId) {
+            document.getElementById("modif-entreprise-link").href = "../Vue/FormulaireModif.php?id=" + entrepriseId;
+        }
+    </script>
 </body>
 
 </html>
