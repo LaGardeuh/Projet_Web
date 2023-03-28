@@ -1,13 +1,12 @@
 
 <?php
-session_start();
+$id = $_SESSION['id'];
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_web;','root','');
 $all_enterprise = $bdd->query('SELECT ent_nom,ent_id FROM entreprise ORDER BY ent_id DESC');
 if(isset($_GET['s']) AND !empty($_GET['s'])){
     $search = htmlspecialchars($_GET['s']);
     $all_enterprise = $bdd->query('SELECT ent_nom,ent_id FROM entreprise WHERE ent_nom LIKE "%'.$search.'%" ORDER BY ent_id DESC');
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +41,7 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
                     <?php 
                     include('../Controler/BtnGestion.php');
                     ?>
+                    <a class="dropdown-item" href="Wish-list.php?id=<?php echo $id ?>">Ma Wish-list</a>
                     <a class="dropdown-item" href="../Controler/Deconnexion.php">Déconnexion</a>
                     <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="Login.php">Déconnexion</a></li>
