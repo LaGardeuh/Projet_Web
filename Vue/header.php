@@ -25,8 +25,11 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">CESI ton stage</h5>
+                    <img type="image-header"src="../Image/logo_cesi_ton_stage.jpg">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                <a href="../Vue/Gestion.php" class="button-gestion">Gestion</a>
                 </div>
             </div>
 
@@ -39,12 +42,14 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
                     <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Profil
                     </a>
-                    <?php 
-                    include('../Controler/BtnGestion.php');
-                    ?>
-                    <a class="dropdown-item" href="../Controler/Deconnexion.php">Déconnexion</a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="Login.php">Déconnexion</a></li>
+<!--                     <a class="dropdown-item" href="../Controler/Deconnexion.php">Déconnexion</a>
+ -->                    <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <?php 
+                        include('../Controler/BtnGestion.php');
+                        ?>    
+                        <a class="dropdown-item" href="Login.php">Déconnexion</a>
+                    </li>
                     </ul>
                 </li>
             </div>

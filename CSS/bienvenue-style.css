@@ -1,0 +1,36 @@
+body {
+    background: linear-gradient(45deg, #ffffff, #fec845, #fec845, #ffffff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+    
+  /* Création d'animations pour le fond */
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+main a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid #fec845;
+    border-radius: 20px;
+    background-color: #fec845;
+	position: relative;
+	font-weight: bold;
+    margin-right: 100px;
+}
+
+body h1{
+    margin-left: 10%;
+    margin-top: 2%;
+}
