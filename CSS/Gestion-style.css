@@ -1,0 +1,63 @@
+/* Style pour la page de gestion */
+body {
+    background: linear-gradient(45deg, #ffffff, #fec845, #fec845, #ffffff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+h1 {
+    margin-top: 50px;
+    margin-left: 3%;
+}
+
+label {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+select {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+}
+
+#suppr-entreprise-link,
+#modif-entreprise-link,#button-create {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 5%;
+    padding: 10px 20px;
+    background-color: #010101;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#suppr-entreprise-link:hover,
+#modif-entreprise-link:hover,#button-create:hover {
+    background-color: #00ff08;
+    transform: scale(1.1);}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

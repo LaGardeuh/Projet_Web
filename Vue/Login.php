@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
 
+<html>
 <head>
+    <link rel="manifest" href="../manifest/manifest.json">
     <meta charset="UTF-8">
     <title>Page de login</title>
+    <script src="../JS/script.js"></script>
     <link rel="stylesheet" type="text/css" href="..\CSS\login_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-
     <div class="container">
         <div class="header">
             <img src="..\Image\logo_cesi_ton_stage.jpg" alt="test">
@@ -39,5 +41,4 @@
         } ?>
     </div>
 </body>
-
 </html>
