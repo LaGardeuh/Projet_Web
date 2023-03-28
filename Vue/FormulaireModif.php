@@ -22,30 +22,23 @@
         <input type="text" id="secteur_activite" name="secteur_activite" value="<?php echo $entreprise['ent_secteur_activite']; ?>"><br>
 
 
-        
+
 
         <label for="localite">Localité: </label>
-        <select id="localite" name="localite" value="<?php echo $entreprise['ent_secteur_activite']; ?>">
+        <select id="localite" name="localite">
             <?php
             include('..\Controler\GetVille.php');
             ?>
-        </select><br>
-        <label for="secteur_activite">Secteur d'activité: </label>
-        <select id="secteur_activite" name="secteur_activite">
-            <option value="BTP">BTP</option>
-            <option value="Info">Informatique</option>
-            <option value="Generaliste">Généraliste</option>
-            <option value="S3E">S3E</option>
         </select><br>
         <label for="nombre_stagiaires">Nombre de stagiaires : </label>
         <input type="text" id="nombre_stagiaires" name="nombre_stagiaires" value="<?php echo $entreprise['ent_place_utilise']; ?>"><br>
 
         <label for="confiance_pilote">Confiance du pilote (1-5):</label>
-        <input type="number" id="confiance_pilote" name="confiance_pilote" min="1" max="5" value="<?php echo $entreprise['ent_place_utilise']; ?>"><br>
+        <input type="number" id="confiance_pilote" name="confiance_pilote" min="1" max="5" value="<?php echo $entreprise['ent_confiance_pilote']; ?>"><br>
+        <input type="submit" value='Modifier'>
     </form>
 
-        <button type="submit">Modifier</button>
-    </form>
+    
 </body>
 
 </html>

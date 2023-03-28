@@ -24,4 +24,7 @@ $QueryInsertSiege->bindParam(1, $ent_id);
 $QueryInsertSiege->bindParam(2, $localite);
 $QueryInsertSiege->execute();
 
+// Ajout d'une alerte pour signaler que l'Entreprise a bien été créé
+echo "<script>alert('Entreprise créé avec succès.');</script>";
+
 header('Location: ../Vue/Bienvenue.php');
