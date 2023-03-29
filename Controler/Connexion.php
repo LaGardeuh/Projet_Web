@@ -21,7 +21,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $_SESSION['logged_in'] = true; //set you've logged in
         $_SESSION['last_activity'] = time(); //your last activity was now, having logged in.
         $_SESSION['expire_time'] = 900; //expire time in seconds: three hours (you must change this)
-        header('Location: ../Vue/Bienvenue.php');
+        header('Location: ../Vue/Bienvenue.php?page=1');
     } else header('Location: ../Vue/Login.php?login_err=identifiant');
 } else header('Location:Login.php');
 

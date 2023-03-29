@@ -1,11 +1,31 @@
 <?php
 $id = $_SESSION['id'];
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_web;', 'root', '');
-$all_company = $bdd->query('SELECT ent_nom,ent_id FROM entreprise ORDER BY ent_id DESC');
+$page = (!empty($_GET['page']) ? $_GET['page'] : 1);
+$limite = 2;
+
+// Partie "Requête"
+/* On commence par récupérer le nombre d'éléments total. Comme c'est une requête,
+ * il ne faut pas oublier qu'on ne récupère pas directement le nombre.
+ * Ici, comme la requête ne contient aucune donnée client pour fonctionner,
+ * on peut l'exécuter ainsi directement */
+$resultFoundRows = $bdd->query('SELECT count(ent_id) FROM `entreprise`');
+/* On doit extraire le nombre du jeu de résultat */
+$nombredElementsTotal = $resultFoundRows->fetchColumn();
+
+$debut = ($page - 1) * $limite;
+/* Cette requête ne change pas */
+$all_enterprise = 'SELECT * FROM `entreprise` LIMIT :limite OFFSET :debut';
+$all_enterprise = $bdd->prepare($all_enterprise);
+$all_enterprise->bindValue('debut', $debut, PDO::PARAM_INT);
+$all_enterprise->bindValue('limite', $limite, PDO::PARAM_INT);
+$all_enterprise->execute();
+//$all_company = $bdd->query('SELECT ent_nom,ent_id FROM entreprise ORDER BY ent_id DESC');
 if (isset($_GET['s']) and !empty($_GET['s'])) {
     $search = htmlspecialchars($_GET['s']);
-    $all_company = $bdd->query('SELECT ent_nom,ent_id FROM entreprise WHERE ent_nom LIKE "%' . $search . '%" ORDER BY ent_id DESC');
+    $all_enterprise = $bdd -> query('SELECT ent_nom,ent_id FROM entreprise WHERE ent_nom LIKE "%' . $search . '%" ORDER BY ent_id DESC');
 }
+
 ?>
 
 <!DOCTYPE html>

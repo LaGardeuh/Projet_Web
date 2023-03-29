@@ -67,7 +67,7 @@ if (isset($_POST['type'])) {
 
                     formHtml += '<label for="mdp">Mot de passe :</label>';
                     formHtml += '<input type="password" name="mdp" id="mdp" required><br>';
-                    formHtml += '<input type="submit" name="submit" value="Flute de zut">';
+                    formHtml += '<input type="submit" name="submit" value="Inscription">';
                     formHtml += '</form>';
                 }
 
