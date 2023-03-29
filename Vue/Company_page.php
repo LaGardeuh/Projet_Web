@@ -1,4 +1,5 @@
 <?php 
+    include('..\Controler\verif_connexion.php');
     include('header.php');
     $id = $_GET["id"];
     $name  = $bdd->query('SELECT offre.ent_id, entreprise.ent_id,entreprise.ent_nom,off_nom,off_id,off_competence FROM entreprise INNER JOIN offre WHERE entreprise.ent_id LIKE "%'.$id.'%"');
@@ -15,7 +16,7 @@
             if ($off->rowCount() > 0){
                  while($offer = $off->fetch()){
                  ?>
-                 <main><a href="Offre.php?name=<?php echo $offer ['ent_nom'];?>&id=<?php echo $offer['off_id']; ?>"><?php echo $offer['off_competence']; ?></a></main>
+                 <main><a href="Offre.php?id=<?php echo $offer['off_id']; ?>"><?php echo $offer['off_competence']; ?></a></main>
                  <?php 
                 }
             }else{  

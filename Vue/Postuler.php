@@ -1,4 +1,7 @@
-<?php include('header.php');?>
+<?php 
+include('..\Controler\verif_connexion.php');
+include('header.php');
+?>
 
 <! DOCTYPE html>    
 <html>
