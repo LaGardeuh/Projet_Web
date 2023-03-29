@@ -10,7 +10,10 @@ $off = $bdd->query('SELECT wl_id,offre.off_id,off_nom,wish_list.off_id FROM offr
             if ($off->rowCount() > 0){
                  while($offer = $off->fetch()){
                  ?>
-                 <main><a href ='Offre.php?id=<?php echo $offer['off_id']?>'><?php echo $offer['off_nom']; ?></a></main>
+                 <main>
+                  <a href ='Offre.php?id=<?php echo $offer['off_id']?>'><?php echo $offer['off_nom']; ?></a>
+                  <a href ='../Model/sup_off_wl.php?id_off=<?php echo $offer['off_id'];?>' class='button' name='sup'> Supprimer l'offre de la Whish-list</a>
+                </main>
                  <?php 
                 }
             }else{  
