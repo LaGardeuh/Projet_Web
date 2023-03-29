@@ -8,7 +8,7 @@ $detail = $detail->fetch();
 ?>
 
 <html>
-    <link rel="stylesheet" type="text/css" href="..\CSS\style.css">
+    <link rel="stylesheet" type="text/css" href="..\CSS\Offre-style.css">
     <h1><?php echo $detail['off_nom']; ?></h1>
     <main>
         Promo : <?php echo $detail['off_type_promo']; ?> <br>
