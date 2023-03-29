@@ -28,7 +28,7 @@
                  while($offer = $off->fetch()){
                     $i++;
                  ?>
-                 <main><?php echo $i ?>. <a href="Offre.php?id=<?php echo $offer['off_id']; ?>"><?php echo $offer['off_competence']; ?></a></main>
+                 <main><?php echo $i ?>. <a href="Offre.php?id=<?php echo $offer['off_id']; ?>"><?php echo $offer['off_nom']; ?></a></main>
                  <?php 
                 }
             } else {

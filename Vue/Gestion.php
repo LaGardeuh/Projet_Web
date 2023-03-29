@@ -54,12 +54,12 @@ include('..\Controler\verif_connexion.php');
                 document.getElementById("suppr-etudiant-link").href = "../Model/SupprEtudiant.php?id=" + etudiantId;
             }
         </script>
-    <?php echo '<a href="#" id="modif-etudiant-link">Modifier l\'étudiant sélectionné</a>' ?>
-    <script>
-        function updateEtudiantId(etudiantId) {
-            document.getElementById("modif-etudiant-link").href = "../Vue/FormulaireModifEtudiant.php?id=" + etudiantId;
-        }
-    </script>
+        <?php echo '<a href="#" id="modif-etudiant-link">Modifier l\'étudiant sélectionné</a>' ?>
+        <script>
+            function updateEtudiantId(etudiantId) {
+                document.getElementById("modif-etudiant-link").href = "../Vue/FormulaireModifEtudiant.php?id=" + etudiantId;
+            }
+        </script>
 
         <br>
 
@@ -74,12 +74,12 @@ include('..\Controler\verif_connexion.php');
                 document.getElementById("suppr-offre-link").href = "../Model/SupprOffre.php?id=" + offreId;
             }
         </script>
-<?php echo '<a href="#" id="modif-offre-link">Modifier l\'offre sélectionnée</a>' ?>
-    <script>
-        function updateOffreId(offreId) {
-            document.getElementById("modif-offre-link").href = "../Vue/FormulaireModifOffre.php?id=" + offreId;
-        }
-    </script>
+        <?php echo '<a href="#" id="modif-offre-link">Modifier l\'offre sélectionnée</a>' ?>
+        <script>
+            function updateOffreId(offreId) {
+                document.getElementById("modif-offre-link").href = "../Vue/FormulaireModifOffre.php?id=" + offreId;
+            }
+        </script>
 
         <br>
 
@@ -98,6 +98,6 @@ function updateEtudiantId(etudiantId) {
 </script> -->
     </form>
 </body>
+<?php include('footer.php'); ?>
 
 </html>
-<?php include('footer.php'); ?>
