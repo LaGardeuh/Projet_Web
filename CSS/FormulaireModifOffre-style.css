@@ -5,7 +5,7 @@ body {
   animation: gradient 15s ease infinite;
 }
 
-form {
+#formulaire {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -19,12 +19,11 @@ h1 {
   margin-left: 3%;
 }
 
-label {
+#in-form {
   display: block;
   width: 100%;
   max-width: 200px;
-  margin: 0 auto;
-  margin-top: 20px;
+  font-weight: bold;
 }
 
 #form label {
@@ -45,20 +44,31 @@ select {
   color: #333;
 }
 
-#form a {
+input[type="submit"] {
+  background-color: #fec845;
+  border: 2px solid rgb(242, 192, 27);
   display: inline-block;
-  text-decoration: none;
-  color: #000000;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  margin-top: 10px;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 0px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #f89e02;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
 }
 
-#form a:hover {
-  width: 100%;
-  color: #00ff08;
-  transform: scale(1.1);
+input[type="submit"] {
+  background-color: #fec845;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  box-shadow: inset 400px 0 0 0 #fec845;
 }
 
 @keyframes gradient {
@@ -71,4 +81,14 @@ select {
   100% {
     background-position: 0% 50%;
   }
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
 }

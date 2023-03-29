@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <link rel="manifest" href="../manifest/manifest.json">
     <meta charset="UTF-8">
@@ -30,15 +31,16 @@
 
             switch ($err) {
                 case 'identifiant':
-        ?>
+                    ?>
                     <div class="popup">
                         <span class="message">Mot de passe ou email incorrect !</span>
                     </div>
 
-        <?php
+                    <?php
                     break;
             }
         } ?>
     </div>
 </body>
+
 </html>

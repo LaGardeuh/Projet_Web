@@ -17,29 +17,15 @@ body {
     }
   }
 
-  main a {
+  body main a {
     color: #000;
-    position: relative;
+    margin-left: 20%;
+    margin-top: 10px;
     text-decoration: none;
   }
-  
-  main a::before {
-    background: #ffffff;
-    content: "";
-    inset: 0;
-    position: absolute;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.5s ease-in-out;
-    z-index: -1;
-  }
-  
-  main a:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
+
 
 body h1{
-    margin-left: 10%;
-    margin-top: 2%;
+  margin-left: 6%;
+  margin-top: 10px;
 }

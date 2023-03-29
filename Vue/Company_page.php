@@ -8,14 +8,18 @@
     $i = 0;
 ?>
 <hmtl>
-<link rel="stylesheet" type="text/css" href="..\CSS\style.css">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="..\CSS\company-page-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <body>
         <h1><?php echo $id["ent_nom"] ?></h1>
-        <main>
+        <main id="infos">
         Secteur d'activité : <?php echo $id["ent_secteur_activite"] ?><br>
         Nombre de stagiaire CESI : <?php echo $id["ent_place_utilise"] ?><br>
-        Confiance pilote : <?php echo $id["ent_confiance_pilote"] ?>/5<br>
-        Note d'évaluation : <?php echo $id["ent_eval"] ?>/5
+        Confiance pilote : <?php echo $id["ent_confiance_pilote"] ?>/5 &#9733 <br>
+        Note d'évaluation : <?php echo $id["ent_eval"] ?> /5 &#9733
         </main>
         <h2>Offre disponible : </h2>
         <section class="show_offers">
@@ -24,16 +28,19 @@
                  while($offer = $off->fetch()){
                     $i++;
                  ?>
-                 <main><?php echo $i ?>. <a href="Offre.php?id=<?php echo $offer['off_id']; ?>"><?php echo $offer['off_competence']; ?></a></main>
+                 <main><?php echo $i ?>. <a href="Offre.php?id=<?php echo $offer['off_id']; ?>"><?php echo $offer['off_nom']; ?></a></main>
                  <?php 
                 }
-            }else{  
-              ?>
-              <main>Aucune offre disponible</main>
-              <?php
+            } else {
+                ?>
+                <main>Aucune offre disponible</main>
+                <?php
             }
         ?>
         </section>  
+            ?>
+        </section>
+
     </body>
+    <?php include('footer.php'); ?>
 </html>
-<?php include('footer.php'); ?>
