@@ -25,13 +25,6 @@ include('header.php');
                  ?>
                  <main><a href="Company_page.php?id=<?php echo $company['ent_id']; ?>"><?php echo $company['ent_nom']; ?></a></main>
                  <?php 
-            <?php
-            if ($all_company->rowCount() > 0) {
-                while ($company = $all_company->fetch()) {
-                    ?>
-                    <main><a href="Company_page.php?id=<?php echo $company['ent_id']; ?>"><?php echo $company['ent_nom']; ?></a>
-                    </main>
-                    <?php
                 }
             } else {
                 ?>
@@ -63,7 +56,5 @@ include('header.php');
             endif;
         ?>
     </body>
- 
     <?php include('footer.php'); ?>
-
-    </html>
+</html>
