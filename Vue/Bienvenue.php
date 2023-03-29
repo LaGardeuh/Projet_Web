@@ -30,6 +30,7 @@ include('header.php');
             }
             ?>
         </section>
+        <div class="centrer">
         <?php // Partie "Liens"
             /* On calcule le nombre de pages */
             $nombreDePages = ceil($nombredElementsTotal / $limite);
@@ -52,6 +53,7 @@ include('header.php');
                 ?>— <a href="?page=<?php echo $page + 1; ?>">Page suivante</a><?php
             endif;
         ?>
+        </div>
     </body>
     <?php include('footer.php'); ?>
 </html>
