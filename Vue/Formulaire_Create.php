@@ -31,50 +31,6 @@ if (isset($_POST['type'])) {
     <head>
         <title>Inscription</title>
         <script>
-            // Définir les options pour la liste déroulante "Promotion"
-            var promotions = [{
-                value: 'A1',
-                text: 'A1'
-            },
-            {
-                value: 'A2',
-                text: 'A2'
-            },
-            {
-                value: 'A3',
-                text: 'A3'
-            },
-            {
-                value: 'A4',
-                text: 'A4'
-            },
-            {
-                value: 'A5',
-                text: 'A5'
-            }
-            ];
-            var villes = [{
-                value: 'saint_nazaire',
-                text: 'Saint Nazaire'
-            },
-            {
-                value: 'paris',
-                text: 'Paris'
-            },
-            {
-                value: 'lille',
-                text: 'Lille'
-            },
-            {
-                value: 'bordeaux',
-                text: 'Bordeaux'
-            },
-            {
-                value: 'la_rochelle',
-                text: 'La Rochelle'
-            }
-            ];
-
             // Fonction pour générer le formulaire en fonction du type de compte sélectionné
             function generateForm() {
                 // Récupérer le type de compte sélectionné
@@ -237,7 +193,9 @@ if (isset($_POST['type'])) {
 
             <div class="container">
                 <div class="header">
+                    <a href="../Vue/Bienvenue.php">
                     <img src="..\Image\logo_cesi_ton_stage.jpg" alt="logo">
+                </a>
                 </div>
                 <h1>Menu Création</h1>
 

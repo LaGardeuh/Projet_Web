@@ -9,7 +9,7 @@ include('header.php');
 <head>
     <meta charset="UTF-8">
     <title>Page de login</title>
-    <link rel="stylesheet" type="text/css" href="..\CSS\bienvenue-style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/bienvenue-style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
     <body>
@@ -30,5 +30,5 @@ include('header.php');
         ?>
         </section>
     </body>
+    <?php include('footer.php'); ?>
 </html>
-<?php include('footer.php'); ?>
