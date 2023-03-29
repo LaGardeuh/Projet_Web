@@ -23,6 +23,9 @@ $QueryDeleteEntreprise->execute(array('id' => $entrepriseId));
 $requete = $pdo->prepare("DELETE FROM entreprise WHERE ent_id = :id");
 $requete->execute(array('id' => $entrepriseId));
 
+// Ajout d'une alerte pour signaler que l'Entreprise a bien été supprimé
+echo "<script>alert('Entreprise supprimé avec succès.');</script>";
+
 // Redirection vers une page de confirmation
 header('Location: ../Vue/Bienvenue.php');
 exit();

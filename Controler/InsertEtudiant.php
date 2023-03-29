@@ -25,4 +25,7 @@ $QueryInsertPromo->bindParam(1, $user_id);
 $QueryInsertPromo->bindParam(2, $promo);
 $QueryInsertPromo->execute();
 
+// Ajout d'une alerte pour signaler que l'Etudiant a bien été créé
+echo "<script>alert('Etudiant créé avec succès.');</script>";
+
 header('Location: ../Vue/Bienvenue.php');
