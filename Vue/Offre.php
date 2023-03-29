@@ -13,10 +13,11 @@ $add = 'Ajouté à la wish-list !';
 
 <head>
     <title>Page d'Offre</title>
-<link rel="stylesheet" type="text/css" href="..\CSS\Offre-style.css">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="..\CSS\Offre-style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <h1>
         <?php echo $detail['off_nom']; ?>
@@ -34,18 +35,27 @@ $add = 'Ajouté à la wish-list !';
         <?php echo $detail['off_nombre_place']; ?> <br>
         Rémunération :
         <?php echo $detail['off_remuneration']; ?> <br>
-        <form name='form' method='post'>
+        <?php echo '<form name="form" method="post" action="../Controler/AddToWishlist.php?idoff=' . $id . '&id_se='. $id_se . '">'?>
             <input type='submit' name='submit' value="Ajouter à la wish-list">
-            <?php
-            if (isset($_POST['submit'])) {
-                $bdd->query("INSERT INTO wish_list (wl_id,use_id,off_id) VALUE (NULL,'$id_se','$id_off')");
-                echo $add;
-            }
-            ?>
+
             <a href="Postuler.php?id=<?php echo $id ?>" class="postuler">Postuler</a>
         </form>
+        <?php if (isset($_GET['err'])) {
+            $err = htmlspecialchars($_GET['err']);
+
+            switch ($err) {
+                case 'repetition':
+                    ?>
+                    <div class="popup">
+                        <span class="message">Offre déjà dans la wishlist</span>
+                    </div>
+
+                    <?php
+                    break;
+            }
+        } ?>
     </main>
-    
+
 </body>
 
 </html>
