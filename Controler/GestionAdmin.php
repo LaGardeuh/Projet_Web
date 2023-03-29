@@ -12,4 +12,10 @@ if ($_SESSION['role'] == 3) {
             document.getElementById("suppr-pilote-link").href = "../Model/SupprPilote.php?id=" + piloteId;
         }
     </script>
+    <?php echo '<a href="#" id="modif-pilote-link">Modifier le pilote sélectionné</a>' ?>
+    <script>
+        function updatePiloteId(piloteId) {
+            document.getElementById("modif-pilote-link").href = "../Vue/FormulaireModifEtudiant.php?id=" + piloteId;
+        }
+    </script>
 <?php }else ?>
