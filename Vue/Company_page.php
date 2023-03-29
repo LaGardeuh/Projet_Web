@@ -38,9 +38,6 @@
             }
         ?>
         </section>  
-            ?>
-        </section>
-
     </body>
     <?php include('footer.php'); ?>
 </html>
