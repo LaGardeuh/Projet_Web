@@ -9,16 +9,17 @@ if (isset($_GET['s']) and !empty($_GET['s'])) {
 ?>
 
 <!DOCTYPE html>
+
 <head>
-<title>Page d'accueil</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="../CSS/style.css">
-<link rel="stylesheet" type="text/css" href="../CSS/header_style.css">
-<script src="JS\header_script.js"></script>
+    <title>Page d'accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/header_style.css">
+    <script src="JS\header_script.js"></script>
 </head>
 <html>
 <header>
-    <nav class="navbar bg-body-tertiary fixed-top">
+    <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -41,11 +42,11 @@ if (isset($_GET['s']) and !empty($_GET['s'])) {
             </form>
             <div class="btn-group">
                 <li class="nav-item">
-                    <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle btn-profil" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Profil
                     </a>
-                    <!--                     <a class="dropdown-item" href="../Controler/Deconnexion.php">Déconnexion</a>
- -->
+                    <!-- <a class="dropdown-item" href="../Controler/Deconnexion.php">Déconnexion</a> -->
+
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
                             <?php
