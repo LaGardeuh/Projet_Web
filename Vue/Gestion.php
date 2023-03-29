@@ -4,7 +4,7 @@ include('..\Controler\verif_connexion.php');
 
 <!DOCTYPE html>
 <div class="header-gestion">
-<?php include('header.php'); ?>
+    <?php include('header.php'); ?>
 </div>
 <html lang="en">
 
@@ -19,7 +19,7 @@ include('..\Controler\verif_connexion.php');
 
 <body>
     <h1>Gestion</h1><br>
-    <form>
+    <form id="form">
         <a id="button-create" href="../Vue/Formulaire_Create.php">Insérer un étudiant, un pilote, une entreprise ou une
             offre</a></br>
         <label for="entreprise" type="entreprise">Entreprise : </label>
@@ -29,51 +29,51 @@ include('..\Controler\verif_connexion.php');
             include('..\Controler\GetEntreprise.php');
             ?>
         </select><br>
-        <?php echo  '<a href="#" id="suppr-entreprise-link">Supprimer l\'entreprise sélectionnée</a>'  ?>
+        <?php echo '<a href="#" id="suppr-entreprise-link">Supprimer l\'entreprise sélectionnée</a>' ?>
         <script>
             function updateEntrepriseId(entrepriseId) {
                 document.getElementById("suppr-entreprise-link").href = "../Model/SupprEntreprise.php?id=" + entrepriseId;
             }
         </script>
-        <?php echo  '<a href="#" id="modif-entreprise-link">Modifier l\'entreprise sélectionnée</a>'  ?>
+        <?php echo '<a href="#" id="modif-entreprise-link">Modifier l\'entreprise sélectionnée</a>' ?>
         <script>
             function updateEntrepriseId(entrepriseId) {
                 document.getElementById("modif-entreprise-link").href = "../Vue/FormulaireModif.php?id=" + entrepriseId;
             }
         </script>
-    </form>
-    <br>
-    <label for="user">Étudiant : </label>
-    <select id="user" name="user" onchange="updateEtudiantId(this.value)">
-        <option value="">Choisir un étudiant</option>
-        <?php include('..\Controler\GetEtudiant.php'); ?>
-    </select><br>
-    <?php echo '<a href="#" id="suppr-etudiant-link">Supprimer l\'étudiant sélectionné</a>' ?>
-    <script>
-        function updateEtudiantId(etudiantId) {
-            document.getElementById("suppr-etudiant-link").href = "../Model/SupprEtudiant.php?id=" + etudiantId;
-        }
-    </script>
 
-    <br>
+        <br>
+        <label for="user">Étudiant : </label>
+        <select id="user" name="user" onchange="updateEtudiantId(this.value)">
+            <option value="">Choisir un étudiant</option>
+            <?php include('..\Controler\GetEtudiant.php'); ?>
+        </select><br>
+        <?php echo '<a href="#" id="suppr-etudiant-link">Supprimer l\'étudiant sélectionné</a>' ?>
+        <script>
+            function updateEtudiantId(etudiantId) {
+                document.getElementById("suppr-etudiant-link").href = "../Model/SupprEtudiant.php?id=" + etudiantId;
+            }
+        </script>
 
-    <label for="offre">Offre de stage : </label>
-<select id="offre" name="offre" onchange="updateOffreId(this.value)">
-    <option value="">Choisir une offre de stage</option>
-    <?php include('..\Controler\GetOffre.php'); ?>
-</select><br>
-<?php echo '<a href="#" id="suppr-offre-link">Supprimer l\'offre de stage sélectionnée</a>' ?>
-<script>
-function updateOffreId(offreId) {
-    document.getElementById("suppr-offre-link").href = "../Model/SupprOffre.php?id=" + offreId;
-}
-</script>
+        <br>
 
-<br>
+        <label for="offre">Offre de stage : </label>
+        <select id="offre" name="offre" onchange="updateOffreId(this.value)">
+            <option value="">Choisir une offre de stage</option>
+            <?php include('..\Controler\GetOffre.php'); ?>
+        </select><br>
+        <?php echo '<a href="#" id="suppr-offre-link">Supprimer l\'offre de stage sélectionnée</a>' ?>
+        <script>
+            function updateOffreId(offreId) {
+                document.getElementById("suppr-offre-link").href = "../Model/SupprOffre.php?id=" + offreId;
+            }
+        </script>
 
-<?php include('../Controler/GestionAdmin.php') ?>
+        <br>
 
-<!-- <label for="etudiant">Étudiant : </label>
+        <?php include('../Controler/GestionAdmin.php') ?>
+
+        <!-- <label for="etudiant">Étudiant : </label>
 <select id="etudiant" name="etudiant" onchange="updateEtudiantId(this.value)">
     <option value="">Choisir un Pilote</option>
     <?php include('..\Controler\GetPilote.php'); ?>
@@ -84,7 +84,8 @@ function updateEtudiantId(etudiantId) {
     document.getElementById("suppr-etudiant-link").href = "../Model/SupprEtudiant.php?id=" + etudiantId;
 }
 </script> -->
-
+    </form>
 </body>
 
 </html>
+<?php include('footer.php'); ?>

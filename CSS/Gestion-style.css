@@ -1,79 +1,74 @@
 /* Style pour la page de gestion */
 body {
-    background: linear-gradient(45deg, #ffffff, #fec845, #fec845, #ffffff);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-  }
+  background: linear-gradient(45deg, #ffffff, #fec845, #fec845, #ffffff);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
 
-  form {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    width: 400px;
-    margin: 50px auto;
+form {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 400px;
+  margin: 50px auto;
 }
 
 h1 {
-    margin-top: 50px;
-    margin-left: 3%;
+  margin-top: 50px;
+  margin-left: 3%;
 }
 
 label {
-    display: block;
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
-    margin-top: 20px;
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
-label[type="entreprise"]{
+#form label {
   color: #000000;
   font-weight: bold;
 }
 
 select {
-    display: block;
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    font-size: 16px;
-    color: #333;
-}
-
-#suppr-entreprise-link,
-#modif-entreprise-link,#button-create {
-    display: inline-block;
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-}
-
-#suppr-entreprise-link:hover,
-#modif-entreprise-link:hover,#button-create:hover {
+  display: block;
   width: 100%;
-    color: #00ff08;
-    transform: scale(1.1);}
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+}
+
+#form a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+#form a:hover {
+  width: 100%;
+  color: #00ff08;
+  transform: scale(1.1);
+}
 
 @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
   }
-
-.header-gestion .d-flex .search-bar{
-  display: none;
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
