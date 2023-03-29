@@ -15,11 +15,11 @@
 
     <body>
         <h1><?php echo $id["ent_nom"] ?></h1>
-        <main>
+        <main id="infos">
         Secteur d'activité : <?php echo $id["ent_secteur_activite"] ?><br>
         Nombre de stagiaire CESI : <?php echo $id["ent_place_utilise"] ?><br>
-        Confiance pilote : <?php echo $id["ent_confiance_pilote"] ?>/5<br>
-        Note d'évaluation : <?php echo $id["ent_eval"] ?>/5
+        Confiance pilote : <?php echo $id["ent_confiance_pilote"] ?>/5 &#9733 <br>
+        Note d'évaluation : <?php echo $id["ent_eval"] ?> /5 &#9733
         </main>
         <h2>Offre disponible : </h2>
         <section class="show_offers">

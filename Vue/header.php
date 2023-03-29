@@ -12,7 +12,8 @@ if (isset($_GET['s']) and !empty($_GET['s'])) {
 
 <head>
     <title>Page d'accueil</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/header_style.css">
     <script src="JS\header_script.js"></script>
@@ -21,10 +22,12 @@ if (isset($_GET['s']) and !empty($_GET['s'])) {
 <header>
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
                     <a href="../Vue/Bienvenue.php">
                         <img type="image-header" src="../Image/logo_cesi_ton_stage.jpg" alt="">
@@ -32,10 +35,8 @@ if (isset($_GET['s']) and !empty($_GET['s'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                <a href="../Vue/Gestion.php" class="button-gestion">Gestion</a>
-                <a href="../Vue/Bienvenue.php" class="button-entreprise">Liste des entreprises</a>
-                <a href="../Vue/Offre.php" class="button-entreprise">Liste des offres</a>
-
+                    <a href="../Vue/Gestion.php" class="button-gestion">Gestion</a>
+                    <a href="../Vue/Bienvenue.php" class="button-entreprise">Liste des entreprises</a>
                 </div>
             </div>
             <form class="d-flex search-bar" role="search" method="get">
@@ -44,8 +45,9 @@ if (isset($_GET['s']) and !empty($_GET['s'])) {
             </form>
             <div class="btn-group">
                 <li class="nav-item">
-                    <a class="nav-link dropdown-toggle btn-profil" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Profil
+                    <a class="nav-link dropdown-toggle btn-profil" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Profil
                     </a>
                     <!-- <a class="dropdown-item" href="../Controler/Deconnexion.php">Déconnexion</a> -->
 
@@ -64,5 +66,7 @@ if (isset($_GET['s']) and !empty($_GET['s'])) {
     </nav>
 </header>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 <script src="JS\header_script.js"></script>

@@ -1,0 +1,44 @@
+body {
+  background: linear-gradient(45deg, #ffffff, #fec845, #fec845, #ffffff);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+/* Création d'animations pour le fond */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body h1 {
+  margin-left: 6%;
+  margin-top: 10px;
+}
+
+main{
+    display: inline-block;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 25px;
+    
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+}
+
+body main a{
+    
+        font-size: 20px;
+        text-decoration: none;
+        color: #000;
+      
+}
