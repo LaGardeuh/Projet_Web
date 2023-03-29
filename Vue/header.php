@@ -30,9 +30,11 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
                 </div>
                 <div class="offcanvas-body">
                 <a href="../Vue/Gestion.php" class="button-gestion">Gestion</a>
+                <a href="../Vue/Bienvenue.php" class="button-entreprise">Liste des entreprises</a>
+                <a href="../Vue/Offre.php" class="button-entreprise">Liste des offres</a>
+
                 </div>
             </div>
-
             <form class="d-flex search-bar" role="search" method="get">
                     <input class="form-control me-2" type="search" name ="s" placeholder="Company Name" aria-label="Search">
                     <button class="btn btn-outline" type="submit">Search</button>

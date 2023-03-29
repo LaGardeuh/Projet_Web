@@ -4,7 +4,9 @@ include('..\Controler\verif_connexion.php');
 ?>
 
 <!DOCTYPE html>
+<div class="header-gestion">
 <?php include('header.php'); ?>
+</div>
 <html lang="en">
 
 <head>
@@ -18,26 +20,29 @@ include('..\Controler\verif_connexion.php');
 
 <body>
     <h1>Gestion</h1><br>
-    <a id="button-create" href="../Vue/Formulaire_Create.php">Insérer un étudiant, un pilote, une entreprise ou une offre</a></br>
-    <label for="entreprise">Entreprise : </label>
-    <select id="entreprise" name="entreprise" onchange="updateEntrepriseId(this.value)">
-    <option value="">Choisir une entreprise</option>
-        <?php
-        include('..\Controler\GetEntreprise.php');
-        ?>
-    </select><br>
-    <?php echo'<a href="#" id="suppr-entreprise-link">Supprimer l\'entreprise sélectionnée</a>'?>
-    <script>
-        function updateEntrepriseId(entrepriseId) {
-            document.getElementById("suppr-entreprise-link").href = "../Model/SupprEntreprise.php?id=" + entrepriseId;
-        }
-    </script>
-    <?php echo'<a href="#" id="modif-entreprise-link">Modifier l\'entreprise sélectionnée</a>'?>
-    <script>
-        function updateEntrepriseId(entrepriseId) {
-            document.getElementById("modif-entreprise-link").href = "../Vue/FormulaireModif.php?id=" + entrepriseId;
-        }
-    </script>
+    <form>
+        <a id="button-create" href="../Vue/Formulaire_Create.php">Insérer un étudiant, un pilote, une entreprise ou une
+            offre</a></br>
+        <label for="entreprise" type="entreprise">Entreprise : </label>
+        <select id="entreprise" name="entreprise" onchange="updateEntrepriseId(this.value)">
+            <option value="">Choisir une entreprise</option>
+            <?php
+            include('..\Controler\GetEntreprise.php');
+            ?>
+        </select><br>
+        <?php echo '<a href="#" id="suppr-entreprise-link">Supprimer l\'entreprise sélectionnée</a>' ?>
+        <script>
+            function updateEntrepriseId(entrepriseId) {
+                document.getElementById("suppr-entreprise-link").href = "../Model/SupprEntreprise.php?id=" + entrepriseId;
+            }
+        </script>
+        <?php echo '<a href="#" id="modif-entreprise-link">Modifier l\'entreprise sélectionnée</a>' ?>
+        <script>
+            function updateEntrepriseId(entrepriseId) {
+                document.getElementById("modif-entreprise-link").href = "../Vue/FormulaireModif.php?id=" + entrepriseId;
+            }
+        </script>
+    </form>
 </body>
 
 </html>
