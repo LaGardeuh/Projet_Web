@@ -112,3 +112,9 @@
   img[type="image-header"]{
     width: 20%;
   }
+
+li{
+  list-style-type: none;
+  padding: 0;
+}
+

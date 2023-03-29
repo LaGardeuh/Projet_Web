@@ -17,15 +17,30 @@ body {
     }
   }
 
-  body main a {
-    color: #000;
-    margin-left: 20%;
+body h1{
+    margin-left: 6%;
     margin-top: 10px;
-    text-decoration: none;
+}
+
+.show_offers {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-left: 10%;
   }
 
+  .main {
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 200px;
+  }
 
-body h1{
-  margin-left: 6%;
-  margin-top: 10px;
+body main a {
+    text-decoration: none;
+    color: #000;
+
 }

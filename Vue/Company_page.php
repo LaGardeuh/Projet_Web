@@ -1,32 +1,39 @@
-<?php 
-    include('..\Controler\verif_connexion.php');
-    include('header.php');
-    $id = $_GET["id"];
-    $name  = $bdd->query('SELECT offre.ent_id, entreprise.ent_id,entreprise.ent_nom,off_nom,off_id,off_competence FROM entreprise INNER JOIN offre WHERE entreprise.ent_id LIKE "%'.$id.'%"');
-    $off  = $bdd->query('SELECT offre.ent_id,entreprise.ent_id,entreprise.ent_nom,off_nom,off_id,off_competence FROM entreprise INNER JOIN offre WHERE entreprise.ent_id = offre.ent_id AND entreprise.ent_id LIKE "%'.$id.'%"'); 
-    $id = $name->fetch();
+<?php
+include('..\Controler\verif_connexion.php');
+include('header.php');
+$id = $_GET["id"];
+$name = $bdd->query('SELECT offre.ent_id, entreprise.ent_id,entreprise.ent_nom,off_nom,off_id,off_competence FROM entreprise INNER JOIN offre WHERE entreprise.ent_id LIKE "%' . $id . '%"');
+$off = $bdd->query('SELECT offre.ent_id,entreprise.ent_id,entreprise.ent_nom,off_nom,off_id,off_competence FROM entreprise INNER JOIN offre WHERE entreprise.ent_id = offre.ent_id AND entreprise.ent_id LIKE "%' . $id . '%"');
+$id = $name->fetch();
 
 ?>
 <hmtl>
-<link rel="stylesheet" type="text/css" href="..\CSS\style.css">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="..\CSS\company-page-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <body>
-        <h1><?php echo $id["ent_nom"] ?></h1>
+        <h1>
+            <?php echo $id["ent_nom"] ?>
+        </h1>
         <section class="show_offers">
-        <?php
-            if ($off->rowCount() > 0){
-                 while($offer = $off->fetch()){
-                 ?>
-                 <main><a href="Offre.php?id=<?php echo $offer['off_id']; ?>"><?php echo $offer['off_competence']; ?></a></main>
-                 <?php 
+            <?php
+            if ($off->rowCount() > 0) {
+                while ($offer = $off->fetch()) {
+                    ?>
+                    <main><a href="Offre.php?id=<?php echo $offer['off_id']; ?>"><?php echo $offer['off_competence']; ?></a>
+                    </main>
+                <?php
                 }
-            }else{  
-              ?>
-              <main>Aucune offre disponible</main>
-              <?php
+            } else {
+                ?>
+                <main>Aucune offre disponible</main>
+                <?php
             }
-        ?>
+            ?>
         </section>
-        
+
     </body>
+    <?php include('footer.php'); ?>
 </html>
-<?php include('footer.php'); ?>

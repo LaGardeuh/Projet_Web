@@ -45,7 +45,7 @@ if (isset($_GET['s']) and !empty($_GET['s'])) {
             <div class="btn-group">
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle btn-profil" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Profil
+                    Profil
                     </a>
                     <!-- <a class="dropdown-item" href="../Controler/Deconnexion.php">Déconnexion</a> -->
 
